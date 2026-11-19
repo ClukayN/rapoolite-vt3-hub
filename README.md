@@ -4,7 +4,10 @@
 
 纯用户态实现：Native 宿主（C# + WebView2）负责窗口、托盘、开机自启与卸载，Node 进程通过 node-hid 直接读写 HID 配置寄存器，界面是本地网页（深色玻璃风格，支持纯黑 / 深灰 / 浅灰 / 自选图片背景）。
 
-![主页](docs/home.png)
+![主页](docs/home.jpg)
+
+> **下载**：到 [Releases](https://github.com/ClukayN/rapoolite-vt3-hub/releases) 下载 `RapooLite-Setup.msi` 双击安装即可。
+
 
 ## 快速开始
 
@@ -67,7 +70,7 @@ powershell -ExecutionPolicy Bypass -File install.ps1
 
 | 设置页 | 背景页 |
 | --- | --- |
-| ![DPI](docs/dpi.png) | ![背景](docs/theme.png) |
+| ![DPI](docs/dpi.jpg) | ![背景](docs/theme.jpg) |
 
 ## 构建 exe
 
