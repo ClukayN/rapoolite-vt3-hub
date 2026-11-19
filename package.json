@@ -1,8 +1,8 @@
 {
   "name": "rapoolite",
-  "version": "0.1.0",
-  "private": true,
-  "description": "雷柏 VT3 轻量第三方驱动（Node 后端 + 本地网页 UI）",
+  "version": "1.0.0",
+  "description": "雷柏 VT3 轻量第三方驱动（C# + WebView2 宿主 + Node/HID 后端）",
+  "license": "MIT",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
