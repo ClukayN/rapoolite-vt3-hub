@@ -1,0 +1,1191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="INSTALLDIR">
+            <Component Id="cmp104087D18B25A9A8D2ECC5B6EA2AE79B" Guid="61EB380C-DC02-4DC2-8659-E26781C03C07">
+                <File Id="fil5282108DD54B6C7D192C3E9D001FD4E7" KeyPath="yes" Source="$(var.StageDir)\Microsoft.Web.WebView2.Core.dll" />
+            </Component>
+            <Component Id="cmp3ED4B6E14797367C1383E408A6961B85" Guid="5CF9A2FF-CF8F-4F5F-B5AA-3A8C317F80BF">
+                <File Id="filBEB43BF024BDDFB47075A1E970FB51F2" KeyPath="yes" Source="$(var.StageDir)\Microsoft.Web.WebView2.WinForms.dll" />
+            </Component>
+            <Component Id="cmp84AB1D3C237F5F2DE9FB68C45649370B" Guid="94A89368-19C6-4810-928E-C967E57014E1">
+                <File Id="fil824F9F2F542BC4157995DF73E6A91B42" KeyPath="yes" Source="$(var.StageDir)\RapooLite.exe" />
+            </Component>
+            <Component Id="cmp833E20356BBC962E0CF21468EDA2CEC6" Guid="DA963CF8-583F-4E46-9D7F-3E7F9FD40BC3">
+                <File Id="fil674380EAADB051E28B2B18422F5CBA2B" KeyPath="yes" Source="$(var.StageDir)\RapooLite.exe.config" />
+            </Component>
+            <Component Id="cmp74C002F3E7887C8150BBB5707FA71B13" Guid="C5FF7574-0B8F-452E-9D78-B997986FE931">
+                <File Id="fil2493994E030480CF99B3EF99E2E518C4" KeyPath="yes" Source="$(var.StageDir)\WebView2Loader.dll" />
+            </Component>
+            <Directory Id="dirE346A75FEDD174A44A845475C6757E1F" Name="app">
+                <Component Id="cmpF1848385C2826C0A49D68522AAD60E2F" Guid="F2EC8AEB-72F6-48F6-9607-5E6DA7788965">
+                    <File Id="fil636559931CFAE98F878C8BF4FC76E576" KeyPath="yes" Source="$(var.StageDir)\app\package.json" />
+                </Component>
+                <Component Id="cmpAFDEA980929120933B35E162C78AD34E" Guid="A38F8883-5DB0-452F-A545-155A26E327FF">
+                    <File Id="filC86F2A879764CF0B5252F83C875B1D6C" KeyPath="yes" Source="$(var.StageDir)\app\server.js" />
+                </Component>
+                <Component Id="cmp0D25CE37FEF1D8920C71E893D1AF34A7" Guid="CF241B72-8E4C-4425-BFD7-06952D765203">
+                    <File Id="filB8D8F4FE4EB9C226753C80DF5DB3036B" KeyPath="yes" Source="$(var.StageDir)\app\start.js" />
+                </Component>
+                <Directory Id="dirE9C0FEC87896CEE1BEC9ECB1B8B56280" Name="lib">
+                    <Component Id="cmpF256166F8388C32AF146B25DB35C302E" Guid="9EC774AF-D092-4CFE-9A41-5FFD4DB841D2">
+                        <File Id="fil1721F7820571C6F30FADBF8DCDF3A9C9" KeyPath="yes" Source="$(var.StageDir)\app\lib\autostart.js" />
+                    </Component>
+                    <Component Id="cmpB2C67A01F78AA4CB89F507C7892222F0" Guid="95656B8D-2687-419B-BD19-0F0FCBBCEB5B">
+                        <File Id="fil934F75119272BA6BC85F742F1291D39E" KeyPath="yes" Source="$(var.StageDir)\app\lib\device.js" />
+                    </Component>
+                    <Component Id="cmp561AFAE882773E1005172B2EA0CC0D45" Guid="3B03D99D-2AE0-4C23-8101-A027BA523079">
+                        <File Id="fil6AD0A369418489B09E283BEC79E03805" KeyPath="yes" Source="$(var.StageDir)\app\lib\hid.js" />
+                    </Component>
+                    <Component Id="cmpC3F0B527DC690D516260A9B2F40101D3" Guid="7E54A389-FBDA-45C4-BBB4-E32F84B8F01D">
+                        <File Id="fil41EC82CB01FCF00ACCB15FA99D6A09DE" KeyPath="yes" Source="$(var.StageDir)\app\lib\protocol.js" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir85AD6D2734A1FB40DBC4750D0795CBBA" Name="node_modules">
+                    <Component Id="cmp665AAC56D7536D966091A1D2AF81549B" Guid="1731A8B3-81AC-4593-9AB8-53143C707E2E">
+                        <File Id="fil39D69C755F858FBD69D1F41C645EC325" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\.package-lock.json" />
+                    </Component>
+                    <Directory Id="dir8339A50BDCBDAFFBDC1AE6C9011A4C20" Name=".bin">
+                        <Component Id="cmp7A8B727184504DB799055D17EFF030D7" Guid="F6DBD679-39DF-4F87-B0A2-062DE717A0E1">
+                            <File Id="fil04BD054AAA5277863FF124B216128BAC" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\.bin\hid-showdevices" />
+                        </Component>
+                        <Component Id="cmp9B6EC2901CAF8328BD2B8ABBA9C15CF8" Guid="C60E819A-A7DA-4556-925D-53F195D0F8F2">
+                            <File Id="filC5BD24D37064127800C7E5B07F2793D1" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\.bin\hid-showdevices.cmd" />
+                        </Component>
+                        <Component Id="cmp8A27456B482A011CE7C1F311674A1D99" Guid="6F73A5F6-085B-4FE4-9C41-C028CD8ED53A">
+                            <File Id="fil00BBB8A90A57497E6418CDAD683791EB" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\.bin\hid-showdevices.ps1" />
+                        </Component>
+                        <Component Id="cmpA77F659A9CAFE8C78EDA7822F12A8D44" Guid="E965B9E2-0F56-4372-BC9B-0C817C640C34">
+                            <File Id="fil9819F0C8246D873512658FB9D9E7640B" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\.bin\pkg-prebuilds-copy" />
+                        </Component>
+                        <Component Id="cmp9B07A151AD6E0B409BADA879CFE25A07" Guid="71F4D1D5-3C3C-497A-9148-C41DB87A8FF5">
+                            <File Id="filFC461F2A539386887DF71184EFADF383" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\.bin\pkg-prebuilds-copy.cmd" />
+                        </Component>
+                        <Component Id="cmpFF1A75A902A61A09F276F1F09077BA34" Guid="2C1255C2-B741-45F7-9A6E-B927596D6210">
+                            <File Id="filC8A1E3148A757660AA181875E32D008F" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\.bin\pkg-prebuilds-copy.ps1" />
+                        </Component>
+                        <Component Id="cmp0E4F7793BCB90DB43B938A85EFD7451C" Guid="05174143-3058-433A-B85D-B449CE51DD40">
+                            <File Id="filF8A930C248ACEB6C4CEF4BD3FE130E30" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\.bin\pkg-prebuilds-verify" />
+                        </Component>
+                        <Component Id="cmp85578C2102A5C4D3CF5411AF149903A5" Guid="8F5808B9-7A00-43FB-AA70-385BC5D9E2B6">
+                            <File Id="filE1D02F68884F02078BA244EF936A8043" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\.bin\pkg-prebuilds-verify.cmd" />
+                        </Component>
+                        <Component Id="cmp681AEC973463D6F958E133014ACC21C8" Guid="1B569288-FA41-42CD-95A5-18FC28F68747">
+                            <File Id="filFC049ACFAF27F3D30E77EC90D8E33C56" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\.bin\pkg-prebuilds-verify.ps1" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="dir9A5144A1C9BD367CE27729761E230D38" Name="node-addon-api">
+                        <Component Id="cmp9DC58EF3BE86FF8075E27563F62BCD98" Guid="22339380-9B7E-4790-8456-13F9142DAFFF">
+                            <File Id="fil7896E76B5BECE0FE412C7F83C2BBEA6F" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\common.gypi" />
+                        </Component>
+                        <Component Id="cmp4A98A7A8ED7DBB387654EE0F63F7A3BB" Guid="A98B10AE-74A5-4051-B74A-D95B020B0E33">
+                            <File Id="fil0F67DBD69B5AD09983B1CDEE947C9528" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\except.gypi" />
+                        </Component>
+                        <Component Id="cmp720F498346D1DD54B347F25044442516" Guid="93F3F4FD-535D-4316-B385-573D8D3FE4CE">
+                            <File Id="fil482502AE11879A2A7E53A24710BA5BE0" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\index.js" />
+                        </Component>
+                        <Component Id="cmpCE2C9A290AD16FFCC7A2D1047BC012FC" Guid="89EB12AC-EBAE-448B-8BF6-FABF345C0F0F">
+                            <File Id="filB1C057B911B8821E059786F4C2666EBD" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\LICENSE.md" />
+                        </Component>
+                        <Component Id="cmp63C666C4227458A048C47F25C90753AE" Guid="3F2FB758-CBB1-41AF-9749-F4B66D2B70F7">
+                            <File Id="filC610317E0CA51F422C2A7B8A6B81DF7B" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\napi-inl.deprecated.h" />
+                        </Component>
+                        <Component Id="cmp212A498AFA34600DC8ACFD15FF36412F" Guid="B0D6E809-2E25-429D-A247-451AD2C31978">
+                            <File Id="fil0F5212040C2EF5E6A9274CDA146ED0C9" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\napi-inl.h" />
+                        </Component>
+                        <Component Id="cmp6FEBD14F15954712E2D07F994E1DDE39" Guid="229F445B-F5DB-49B9-A61E-89759457B026">
+                            <File Id="fil0F02BA863D93CB8A0BB320AA2162B78A" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\napi.h" />
+                        </Component>
+                        <Component Id="cmp081EE50B562C57EB07C967F24721EFE4" Guid="9182B395-C7A2-45DE-A95F-72462D8C0F71">
+                            <File Id="filD98C37998BC91EB6C4A1BBF9E65E54B6" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\node_addon_api.gyp" />
+                        </Component>
+                        <Component Id="cmpD70EC72644048B9336DCF4D4252CF2E0" Guid="9D1F7F32-1591-413A-91F4-3C1BAAB51986">
+                            <File Id="fil6F334D6986D1D37FA1D761B0CC0373E7" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\node_api.gyp" />
+                        </Component>
+                        <Component Id="cmpABE9A9E7783C75E1173C84D3107618C4" Guid="66FD9F68-36E9-4A5A-BF17-0F5FE023A624">
+                            <File Id="filC40D6F0EFAD7FD8EC5491184734D9BC6" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\noexcept.gypi" />
+                        </Component>
+                        <Component Id="cmpF7D5931F8C61EFA25957D843F761140D" Guid="8476207A-57C4-4FC8-9D67-A14389F22A58">
+                            <File Id="filC2E86DACA6837BEBD4466649776FB9B5" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\nothing.c" />
+                        </Component>
+                        <Component Id="cmpEAAE4337D4DF82ED05BA894A6EA358C6" Guid="B7779A7F-3438-457E-BF16-1AB5F63924DA">
+                            <File Id="fil88C36A6921C4B4E2706A59347B11993F" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\package-support.json" />
+                        </Component>
+                        <Component Id="cmp0F09F715D7907EAA557ADF1DA230C85D" Guid="023A8F13-8FF5-445E-9384-0B01B7AEDDA2">
+                            <File Id="fil1BACC079E562A3C8DB8C75431349BD16" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\package.json" />
+                        </Component>
+                        <Component Id="cmp5FB2F1484D1FA657B0EFE20E0941E329" Guid="D2E76C8C-CE96-4148-8CFE-C3D4DF61D07D">
+                            <File Id="filD3A0BC81299A465D8B2A2020C0F9607A" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\README.md" />
+                        </Component>
+                        <Directory Id="dir2E3F570497F109CB9C00884DA3C6CCE0" Name="tools">
+                            <Component Id="cmp33FD0C3A607C05C22B465A84B54DF7DB" Guid="01A75F2A-04BE-4DA6-9BEF-26E382B1487D">
+                                <File Id="fil34D60F82FA584CF3ABA7E859A5110731" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\tools\check-napi.js" />
+                            </Component>
+                            <Component Id="cmpA93BC1212543767D12F59F6C887B734A" Guid="ECFBD6B9-06F2-45CD-8D60-53DE5AB2F1B7">
+                                <File Id="fil19DF8799831BAEEC17BBDF70A2282F76" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\tools\clang-format.js" />
+                            </Component>
+                            <Component Id="cmp4455E213882FF4C56D76DA784D217F43" Guid="0C01E58B-E384-42B4-8B0F-17359F13B292">
+                                <File Id="filA5EFA330740DEFEEC7FBC3413D7D25F7" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\tools\conversion.js" />
+                            </Component>
+                            <Component Id="cmpAF3FA196DC3E6791F56E4596A00D5A7F" Guid="ACCB84AE-5BE3-4605-9BC5-EB958B661406">
+                                <File Id="fil2149471D948B5E3CB4C4D6B1D5F19156" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-addon-api\tools\README.md" />
+                            </Component>
+                        </Directory>
+                    </Directory>
+                    <Directory Id="dir5656A7C46931B6EC7FC8E9864B9398F0" Name="node-hid">
+                        <Component Id="cmp67243CA70C6312B4FA1BC09AC1CC94AF" Guid="BC6A1934-726A-47B9-B56E-58DAB255B238">
+                            <File Id="filA60CCC4C635F7057A49E7CEC67FC0923" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\binding-options.js" />
+                        </Component>
+                        <Component Id="cmp4011ED367667D623158CCD8452021589" Guid="771E3A6F-4747-4926-8C58-F5F124F40021">
+                            <File Id="fil80518F0CF103D3B8B9458F328969DC31" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\binding.gyp" />
+                        </Component>
+                        <Component Id="cmp930621D176454D2078DF0FBA3536058A" Guid="4E998410-31DF-4F87-8A2F-1329B7DBCC09">
+                            <File Id="filEB2B1377A59B517930491AD569117F9D" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\LICENSE-bsd.txt" />
+                        </Component>
+                        <Component Id="cmp07B8A5E8B314CED799A7A7ECAD857F9E" Guid="173B8F20-156A-41BD-9DF6-11A105A9FAFE">
+                            <File Id="fil5A544FE1F3D601313324ED8DBA3D0E6F" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\nodehid.d.ts" />
+                        </Component>
+                        <Component Id="cmpA1DE61BA447C8D6249D1C39A07C54505" Guid="D7317127-4B46-40FC-9427-3A5A79F09F15">
+                            <File Id="fil5CCC1015895EEB98822BBF44675D8F75" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\nodehid.js" />
+                        </Component>
+                        <Component Id="cmpB2810C6FDD1B3E1F283BE5AA07EE228E" Guid="0225EFFD-0851-4F4A-B925-B84C0241F20A">
+                            <File Id="fil7BEF84404DEFE0436677D8D99028AAB8" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\package.json" />
+                        </Component>
+                        <Component Id="cmpCF990DC8AF1AA968AF4F1834B9F15C22" Guid="70EBE441-C02A-4DB0-82E8-2146D4570C6F">
+                            <File Id="fil9718A7F609A61E462396C2F276243FB5" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\README.md" />
+                        </Component>
+                        <Directory Id="dirC364361EB7EF3F7492896B8C2672DD8C" Name="hidapi">
+                            <Component Id="cmp945B1BE14EED1EE547CF41FA9173BBE0" Guid="F018C290-2E46-4489-87F7-9F1EC52C37EC">
+                                <File Id="fil14F02249C72BEA7075BC69D69E76F7BD" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\.appveyor.yml" />
+                            </Component>
+                            <Component Id="cmp1A0B42033580C0C369481D669AD60657" Guid="496A0F33-4624-4D7C-A6E6-016AC42EFE02">
+                                <File Id="filB6F282FE69293B59DFFEC9BA909A7177" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\.cirrus.yml" />
+                            </Component>
+                            <Component Id="cmp0D28CF6A6C28239954CCB4626C844B20" Guid="1F892551-8D9B-4662-AE37-1EBD4116807B">
+                                <File Id="fil99199FA2D750E794331A0396B6001635" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\.gitattributes" />
+                            </Component>
+                            <Component Id="cmp82CAEF8D0944120ADB7EAEFBE31D9DE4" Guid="EC63E2E9-8059-4CF4-9244-503B28D0AF41">
+                                <File Id="fil2C9987ED6FE3A9003C4E94AC6264F9EF" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\AUTHORS.txt" />
+                            </Component>
+                            <Component Id="cmpEB8CCC3917C5A76AAE606E702090536F" Guid="6722D53E-139D-4827-B7BB-84D6D65B9474">
+                                <File Id="fil8662122AFF7BFBD954C00F27AE3A226B" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\bootstrap" />
+                            </Component>
+                            <Component Id="cmp99930865196AF47C4B56BB7B69AF1405" Guid="9D55D122-52B2-41E5-978A-20F005CE89CB">
+                                <File Id="fil065AC9704A48726ED1A11543B4C19C09" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\BUILD.autotools.md" />
+                            </Component>
+                            <Component Id="cmp7064DCEEB9217757865D5945ECC00071" Guid="2FA21ED7-8876-49C8-85AA-5AFD682944F7">
+                                <File Id="fil38FD38D2F651534D2964BFB77C40D02F" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\BUILD.cmake.md" />
+                            </Component>
+                            <Component Id="cmpDF54A51E067E449E995F573103C0974F" Guid="040D4B3F-1380-4D2F-96DB-70897B8D52CE">
+                                <File Id="filDBDEF9C4685C4B76B4F811A4C672505A" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\BUILD.md" />
+                            </Component>
+                            <Component Id="cmp3E23954B5B8F280450071BCBE39E670E" Guid="C2B22371-4973-4818-8B7F-60C463FC0FC6">
+                                <File Id="filE997BD27E316654353A29FA35058DEE6" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\CMakeLists.txt" />
+                            </Component>
+                            <Component Id="cmp6EDD0ED9EB81E796724D2C9E82934E09" Guid="CBE628F8-98D0-4056-B22E-43E522A5F7A6">
+                                <File Id="fil36210113C81278BC94C0B63B35E10877" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\configure.ac" />
+                            </Component>
+                            <Component Id="cmp02FDF96287A27CEA62CABF61B90A448E" Guid="940BC9AE-4C4F-43DD-81E0-6A1467CD66C0">
+                                <File Id="filD1CDB44700D1D6E09AB8FAB7FB3AA412" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\HACKING.txt" />
+                            </Component>
+                            <Component Id="cmp8CA51E4FE5624D9B70E42AF2003ED923" Guid="E810ED80-A5BD-4916-884C-361F1D544B4D">
+                                <File Id="filB03C26D94FA9D4BE587632394E6ACF1A" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\LICENSE-bsd.txt" />
+                            </Component>
+                            <Component Id="cmpCC3801FE9FB7234CBE717579EA32EEB9" Guid="80EF3F07-263E-4DC1-8D8F-3F8A187A9979">
+                                <File Id="fil17DF66E62A156E667FC82AE898C6AEBC" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\LICENSE-gpl3.txt" />
+                            </Component>
+                            <Component Id="cmp1DDE2F0C540A6656FABC11F26BB2D31F" Guid="C76890D3-E80A-4844-97E3-717986A235F2">
+                                <File Id="fil287E7BE92F64034D589A5583487865E6" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\LICENSE-orig.txt" />
+                            </Component>
+                            <Component Id="cmpB8F1CFCA7A97C68B36AACEB94911456C" Guid="F374F985-4C0E-4F7F-AABD-65DC1C3A3267">
+                                <File Id="fil97D2BB794302CC76B408F93E395B5905" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\LICENSE.txt" />
+                            </Component>
+                            <Component Id="cmp6A03820C2A27C310C1709036920B698B" Guid="B30C88D8-112D-4EE6-9307-D7CB97A398D4">
+                                <File Id="fil3068E4C07215443968F98ED4C736BFCD" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\Makefile.am" />
+                            </Component>
+                            <Component Id="cmp143F0DADB85DA69DAAF9B864DD011875" Guid="A675EA14-359D-4ADE-986F-6588CACB8436">
+                                <File Id="filE707F11B8D56AA8041D41CCB7690C537" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\meson.build" />
+                            </Component>
+                            <Component Id="cmp8AC9CA628641D1DDE874CF68269290A2" Guid="962570DC-8811-4B22-99FB-062B02C2869A">
+                                <File Id="filC164C96F81AEE4E2458AB97C774774DD" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\README.md" />
+                            </Component>
+                            <Component Id="cmp4109602D65E488FF749AD51713476351" Guid="410AA46F-CCA0-4F0E-8B7A-84422A93DA4D">
+                                <File Id="filE5FC06C12993A92590E63408B1323BC4" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\VERSION" />
+                            </Component>
+                            <Directory Id="dir9EA59A0DCF326D4A33BD242BFB9E144D" Name=".builds">
+                                <Component Id="cmpC404E53CB9283DE625D8B519EEA5EE7F" Guid="9AAB1CAF-72E5-465A-A383-A52F861A4C20">
+                                    <File Id="filEA8ECFF07B708EF13BE2E7DBD470F85E" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\.builds\freebsd.yml" />
+                                </Component>
+                                <Component Id="cmpD9CB44A3B53507E186ED19B72165CFEC" Guid="06B124BE-D13A-4F9D-BCC8-BDE065338C94">
+                                    <File Id="fil150EC28A97624911DA7AAB34A4A4634E" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\.builds\netbsd.yml" />
+                                </Component>
+                                <Component Id="cmpC90BBFADE45D1B98C7BE86EEE18F9E91" Guid="5951A040-2278-438F-9AD3-1113ABD177C2">
+                                    <File Id="filDC76721240E5F5599FBC33C0069419D4" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\.builds\openbsd.yml" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dirB1C7DF2B9B027A286579B2F2D9D28B25" Name=".github">
+                                <Directory Id="dir4222E20E84B51643D72F441E369F51BA" Name="workflows">
+                                    <Component Id="cmpBBB69A3A79556E9C05820E7750AC883D" Guid="EB2E27C8-DD53-4F5A-BA91-A47D604A4C6B">
+                                        <File Id="fil5E778495879ABB17600FA347D2DADCE6" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\.github\workflows\builds.yml" />
+                                    </Component>
+                                    <Component Id="cmpA907705C036E768BB89365336F0D16CF" Guid="5440C5DA-29D6-4CB9-93FA-B083374A00B8">
+                                        <File Id="fil463D3472C5495147F88C89D7153DD61D" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\.github\workflows\checks.yml" />
+                                    </Component>
+                                    <Component Id="cmp9F6D987BB3D520D51BC1E730DFA9C344" Guid="AD3F00E0-4A8F-49D5-A210-D35D5555C708">
+                                        <File Id="fil882EAF7FBE9AAD251640FD339D81A7EF" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\.github\workflows\docs.yaml" />
+                                    </Component>
+                                </Directory>
+                            </Directory>
+                            <Directory Id="dir48D455789034C118EE78C9AE4BBC19FC" Name="android">
+                                <Directory Id="dir2BF930A637F449C66BA8D48C63F537EA" Name="jni">
+                                    <Component Id="cmpB9153F7A897426BEEADCACDAE5902EE8" Guid="B27F8E43-C9B3-4B9A-A156-BFCE05161A91">
+                                        <File Id="fil5658DF5343DB2B66DE694E129725BF0F" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\android\jni\Android.mk" />
+                                    </Component>
+                                </Directory>
+                            </Directory>
+                            <Directory Id="dirAB638C1521430EC8731A7C3E782DE624" Name="dist">
+                                <Component Id="cmpA76CC413A0756A38920BF2208C873395" Guid="ADB6AF13-4FD1-4D42-BB94-139C02ADE5F5">
+                                    <File Id="filC19A1B24938CBF89F16046B72869EC47" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\dist\hidapi.podspec" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dir0E7BB9A71EE92F73239E265432317F45" Name="documentation">
+                                <Component Id="cmp3285451F9A8D14A508A27F2C6C6B773D" Guid="1CB4935C-2794-4522-8EC2-350B0EDA3862">
+                                    <File Id="filE6A7152297A9043B75DD48085FAF21D0" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\documentation\cmake-gui-drop-down.png" />
+                                </Component>
+                                <Component Id="cmp64572B5BB99F339D73D7244B156C8ED9" Guid="6E986777-48A3-44A7-B0A8-119CACCC6105">
+                                    <File Id="filD01205AEF7932C9C7E1EF87254A21532" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\documentation\cmake-gui-highlights.png" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dir7F84381CCA26EC2FD61CCDD8AE79B2B8" Name="doxygen">
+                                <Component Id="cmp3EB6A40D63494073DBF553B1762A2645" Guid="B8A8849C-ABA4-4A59-9C27-4036A52FF949">
+                                    <File Id="fil10EB2E30D27C8E2E4AF0859932DC8163" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\doxygen\Doxyfile" />
+                                </Component>
+                                <Component Id="cmpC6FCD5704D3925014D681B898546354E" Guid="237416E3-C9CB-4FF8-9C3E-03E7A83E5DFF">
+                                    <File Id="fil4AC424B7F8DE0CF527B44409B4008007" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\doxygen\main_page.md" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dirDE7DEE5E9A1BB2A977CB13F38FD3863B" Name="hidapi">
+                                <Component Id="cmp378252469D5DA2F29C48A80F841E8F31" Guid="10EEB954-F5ED-4E7D-B199-5930D306AA28">
+                                    <File Id="filAA8B32A669DEA2DBE953B2830CF39E6A" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\hidapi\hidapi.h" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dirAAD43CD01D9CA1738A1D84FF5AB76F98" Name="hidtest">
+                                <Component Id="cmp102B8B26DF06816A1376E8C0446D7D81" Guid="4B0E548D-B59A-4570-8C47-B23C1EAC53D7">
+                                    <File Id="filFDE1D0C14282386D7226B79FA3B1803B" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\hidtest\CMakeLists.txt" />
+                                </Component>
+                                <Component Id="cmp079A4B7626E7E8E64C2A562990195789" Guid="D54463AF-C001-465A-BCAC-4624DEFBACEC">
+                                    <File Id="fil9363CEFFFCFE490EBC48E8F1DAD5A472" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\hidtest\Makefile.am" />
+                                </Component>
+                                <Component Id="cmp42546EC4F15F5BFC2AB4DA7B89EA312D" Guid="72BBA9AD-0F79-42D6-A54A-681AD0E1D9E9">
+                                    <File Id="fil67B11F954811D6978D11DD8FEB31775E" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\hidtest\test.c" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dir1761A89187DD00797BB98B1E6D274C1B" Name="libusb">
+                                <Component Id="cmp13B5AD85EFF4420085E2AAA3A5727510" Guid="ACF77B19-CB7A-4B55-B6C8-DC9DA66AAEB1">
+                                    <File Id="filDD2F1F28C39610E11C9B63DD3B6BAD84" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\libusb\CMakeLists.txt" />
+                                </Component>
+                                <Component Id="cmpECE9FD4FC632858C404C956FE5E542FE" Guid="F14C6319-E5D1-4BD5-B927-6F4F4FFDB5B9">
+                                    <File Id="fil6F1F45DA129E220D5A70EB9235D43730" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\libusb\hid.c" />
+                                </Component>
+                                <Component Id="cmp93DA4B537E32ED3A89777109E85A93EF" Guid="82A9A8BD-BEBB-4354-99FE-000CCFCF41DE">
+                                    <File Id="fil326A50E75AA76357D8754F535B3897B8" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\libusb\hidapi_libusb.h" />
+                                </Component>
+                                <Component Id="cmp4FD2C1B0ADDD2FBE5809B4AB42D39ACE" Guid="E48703D0-9519-48CD-8413-1A10073B034C">
+                                    <File Id="filCE23222FB76AFC4EF04FC01057FC41FE" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\libusb\hidapi_thread_pthread.h" />
+                                </Component>
+                                <Component Id="cmp760BCAC01052E1B061F28D3948B6A1EF" Guid="B6EA61ED-494D-4B27-ADFD-36AA09B68AFB">
+                                    <File Id="fil99A24BDA30B59C34D2E6BFA1D0B178B3" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\libusb\Makefile-manual" />
+                                </Component>
+                                <Component Id="cmpA9B4F78A72D55E08E36F3E493E172301" Guid="0D37DD24-409F-47F3-8D47-2F646EAC6139">
+                                    <File Id="filD6C65901B8CCC88669AF883AF803C6E7" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\libusb\Makefile.am" />
+                                </Component>
+                                <Component Id="cmp9DEBD9CC348F8BBDA3605890EEB4F046" Guid="1494912C-F9F6-4ED1-BF27-0F69692EC5AF">
+                                    <File Id="fil4FCD4651D76663A44BF370832CC79DC8" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\libusb\Makefile.freebsd" />
+                                </Component>
+                                <Component Id="cmp90F32606DBE69EBA50BCEB933A8B4E4A" Guid="0D5252E4-6138-4692-A9EB-A8AA521CEB82">
+                                    <File Id="fil8E1023FBB5FB2059BF072D196D0C9F99" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\libusb\Makefile.haiku" />
+                                </Component>
+                                <Component Id="cmp41814D142F363C1C7A4A773ABF32F2B4" Guid="B702FCF9-D047-4316-8685-A4BDFC617897">
+                                    <File Id="fil363686D134ECA930AE683857D8847C31" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\libusb\Makefile.linux" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dir7E02D25736E3E7F874839314A96E84B7" Name="linux">
+                                <Component Id="cmp7A5D190050B79CC8E2A3325D83F7B4A0" Guid="C588B120-A4A4-4B0A-B2B8-0AF0FDD0D173">
+                                    <File Id="fil93F3CC04C9BCA9F7D9E6D4FB32481B5F" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\linux\CMakeLists.txt" />
+                                </Component>
+                                <Component Id="cmp4175BA82A2B28E6B5FAFCABD6D9B33BB" Guid="5C1CE6F2-A303-40D9-A893-81F6B522D642">
+                                    <File Id="filA56630F8D4F7EF318F7E7F4CBB1949B8" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\linux\hid.c" />
+                                </Component>
+                                <Component Id="cmp793B3D7E6ADC509DC83F9B8EEF18E534" Guid="71177D44-1F4B-4870-8B18-BBD36B50E862">
+                                    <File Id="fil5931B97C6212C79BC3C0ECCBEDDD557A" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\linux\Makefile-manual" />
+                                </Component>
+                                <Component Id="cmpDF4A00A602E88BE34A975DE8BEDD2CE6" Guid="2DF97249-7FEF-49C7-B08D-FB7F7E5BA295">
+                                    <File Id="fil007E55886E14B4840D2A5C6D1460FAB1" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\linux\Makefile.am" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dir896EC1AB8B340F0921B1DDEDA3EA5A0B" Name="m4">
+                                <Component Id="cmp2E8E198AC918D0892552C00D9DEB3DB1" Guid="72927910-67DA-40B7-B791-6AAC5A2D2551">
+                                    <File Id="fil8D2938AD814887EA454F6255AADB53EC" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\m4\.npmignore" />
+                                </Component>
+                                <Component Id="cmp597698EACC9D51E7C1B8DDB4706501AE" Guid="4EDF831E-3498-4A21-AD09-A7B9780E45AD">
+                                    <File Id="fil0AFC1E208A98019CD71F27496BFEE73A" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\m4\ax_pthread.m4" />
+                                </Component>
+                                <Component Id="cmpF8457AFF22756DCA6CE1D6C5A230F067" Guid="0B8FC24A-320E-416D-9616-573353735C6E">
+                                    <File Id="fil77E1F08CCCEE9470D7600530172D377B" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\m4\pkg.m4" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dir5164212FBEBD5917CF4D83AFFF3C59E0" Name="mac">
+                                <Component Id="cmpAFD9BD37B941C0873CBEBF0C3F77174C" Guid="9282AD07-BDCC-4153-ACFE-791D5CF3DFC7">
+                                    <File Id="fil27CCBD3C0D44DB59596DD2C4183CE983" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\mac\CMakeLists.txt" />
+                                </Component>
+                                <Component Id="cmp0DF167F86A296E944E4D0630F19C1016" Guid="00DF4765-6983-4DB3-B2D8-C05B1434494B">
+                                    <File Id="filF2881624872B929391666A969CCC38FA" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\mac\hid.c" />
+                                </Component>
+                                <Component Id="cmpDF9F59B1E2D81F8B31641031A31DF19A" Guid="6190ADC7-55E3-4994-B19F-FAFD52AA4666">
+                                    <File Id="fil8247F1715058F1D9C6B813BC67D6928A" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\mac\hidapi_darwin.h" />
+                                </Component>
+                                <Component Id="cmpDB86B0D32DFD188E6984436863D8B6B8" Guid="89C89D85-3ABD-4159-AD42-5371322EDC34">
+                                    <File Id="fil67038FEAB0D603B885969E3B7E4BFECD" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\mac\Makefile-manual" />
+                                </Component>
+                                <Component Id="cmp17456184CF114143110791BA3B54F17F" Guid="8B015F83-1ACE-4AFE-8F3D-5C8C44B43FFC">
+                                    <File Id="fil4A8A3FB4D0F9BB655E2C9FEE7439A6E8" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\mac\Makefile.am" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dirD796B526882E56A85FA0C74F86BABA8D" Name="netbsd">
+                                <Component Id="cmp6B9E11AAAC286CE41AD5907979BEF88B" Guid="9CE616AE-04D7-4A36-8D39-0E759F8EDFA0">
+                                    <File Id="fil23BEE0CA7B87ECB7AF05195DBE434571" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\netbsd\CMakeLists.txt" />
+                                </Component>
+                                <Component Id="cmpE749B2C5D98482EA5A8CF1F91D00B91A" Guid="29918B7F-75B4-43BD-910F-4E6E9F5A3E50">
+                                    <File Id="fil7FA067294CCB96A854870AEAAFC432BF" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\netbsd\hid.c" />
+                                </Component>
+                                <Component Id="cmp46CDE839F90D7C559A9E1CD7C598DC60" Guid="BAC06A98-8D4D-4862-AE2B-FC3ED77506E3">
+                                    <File Id="fil51BC88368EAB92C075B81F5501CE64B9" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\netbsd\README.md" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dir98F2E349DAB9A7A08C3540A8F873539E" Name="pc">
+                                <Component Id="cmpFF78C59B504A21AF08AA371AF7A4B2F6" Guid="CEA91E00-0226-4C53-8922-80E4CE0F8762">
+                                    <File Id="fil346CEDCD91B0F4611E38BC20A5257375" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\pc\hidapi-hidraw.pc.in" />
+                                </Component>
+                                <Component Id="cmp80B0E182802FE85573B4AB02BB05B7FB" Guid="48757CA2-5101-422C-85FC-3E7A4542ABCF">
+                                    <File Id="filF218EBD1C4D625248E76326BBF43A398" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\pc\hidapi-libusb.pc.in" />
+                                </Component>
+                                <Component Id="cmpC4D46F9370D2E5220F8F416CF5FB0F1A" Guid="C91CA5A8-A687-443C-995E-BD2E8BF14491">
+                                    <File Id="fil914D14A3DA1FCD53D065584A201DD993" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\pc\hidapi-netbsd.pc.in" />
+                                </Component>
+                                <Component Id="cmp74D2D1A3AAF304AA5044D777DE8B6F05" Guid="5A1D4B8C-4AEF-4CCE-8314-B1EBB627D66E">
+                                    <File Id="fil774B49E0B012275A92F29B15E8610775" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\pc\hidapi.pc.in" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dir07FAABDD0D2F787CB3159DDB1935023A" Name="src">
+                                <Component Id="cmp274D538A477A5037D5137314E20B2526" Guid="A00A9C10-F537-4DDA-944F-7341832421EC">
+                                    <File Id="fil07ABA2817A8A246296A2FB24F8BB7C1C" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\src\CMakeLists.txt" />
+                                </Component>
+                                <Directory Id="dirD01FB44ABA51BB631AA79CA7296EA8F6" Name="cmake">
+                                    <Component Id="cmp2A8913B7E9D73A74CB29FA648EF39E6B" Guid="B43361BD-73E5-4507-83B2-1B3E3E73537C">
+                                        <File Id="fil99A37CDB6865CD7D8353EF45E16B49BD" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\src\cmake\hidapi-config.cmake.in" />
+                                    </Component>
+                                </Directory>
+                            </Directory>
+                            <Directory Id="dir2DBFE5CA7220A9FCCB24195C7B9DAA7F" Name="subprojects">
+                                <Component Id="cmpA2950580005CBDBBFC22E0E29B6B88D6" Guid="2C5AED1B-F2E6-4366-B25C-AB23C853DC48">
+                                    <File Id="fil7129F3A3530E4360E18F898BB373A10C" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\subprojects\README.md" />
+                                </Component>
+                                <Directory Id="dirCB333DDBFF26237222BFD72975180B5E" Name="hidapi_build_cmake">
+                                    <Component Id="cmpA0CA4D5391192790F05BFE8C71BB3894" Guid="5BBD14CB-3F2F-48C9-90CB-F6688C6F0BA2">
+                                        <File Id="filAB92FE88C75CBA2FCEEE6FFB19871D8A" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\subprojects\hidapi_build_cmake\CMakeLists.txt" />
+                                    </Component>
+                                </Directory>
+                            </Directory>
+                            <Directory Id="dir90F187D007364F7CC2F8B32709CD761F" Name="testgui">
+                                <Component Id="cmpF9CFDFA746362E6C4A5D7656540A7964" Guid="10C11AFD-2FD3-47F2-B01F-1530496EFD66">
+                                    <File Id="filDAFD7D3D4F981B2F7B78FEB029573C84" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\testgui\copy_to_bundle.sh" />
+                                </Component>
+                                <Component Id="cmp88D7D2676C8ACBD616A68BD0F298F3AB" Guid="4DA1AAEC-978E-4A06-814B-DB8FBDCBB261">
+                                    <File Id="fil4D2F2180037D1A2E7031D8053989988C" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\testgui\mac_support.h" />
+                                </Component>
+                                <Component Id="cmp9E7A45B86413A33A474E8D41018EE56F" Guid="A7735E8E-A151-4E03-AB75-6FBEEE98E272">
+                                    <File Id="fil1291ACEF1CD9AC66927DA5191141AA06" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\testgui\mac_support_cocoa.m" />
+                                </Component>
+                                <Component Id="cmpD04E0D6C15C113886000126305BA5A08" Guid="E1B2A4FE-3DDD-43FE-8B81-548A19AB4AD2">
+                                    <File Id="fil09CBF929A659C2BAA35E56753C67D3FA" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\testgui\Makefile-manual" />
+                                </Component>
+                                <Component Id="cmp08A27CE928BBC2EC9235D664F09ECC5F" Guid="E31D6811-00A3-40B0-9018-737D7BCC9A01">
+                                    <File Id="filB9B495510B1F2AB1ABCAA874720534F0" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\testgui\Makefile.am" />
+                                </Component>
+                                <Component Id="cmp9EE5C931D35A8BB2A9484E62AFC7D457" Guid="F60D6A55-CA79-4501-9917-0BDAEA97F2D6">
+                                    <File Id="fil321B41BA0BF0923E0ADE706F09A072FC" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\testgui\Makefile.freebsd" />
+                                </Component>
+                                <Component Id="cmp75DBA116CF21C4884E62E73003D0B93E" Guid="565379AC-623B-48A9-995F-CA8FA076EFD9">
+                                    <File Id="filC929E8D14D7811A9C64843AAE45EEF23" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\testgui\Makefile.linux" />
+                                </Component>
+                                <Component Id="cmp58B54F84E3223F425D6E36CE65B11530" Guid="ADC2F916-BDFC-4954-BCCB-02A73DD5DEBC">
+                                    <File Id="fil3173E091C25F2F7E0211AC4973131DD6" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\testgui\Makefile.mac" />
+                                </Component>
+                                <Component Id="cmpF4997D3EC6FE2BEDA6EF2BE51E98B2D1" Guid="A142A21D-0D04-4745-8B1D-C90A657B7970">
+                                    <File Id="filBCA9FF3DCC63A014DEB5B77C5F15DD6A" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\testgui\Makefile.mingw" />
+                                </Component>
+                                <Component Id="cmpD113FCDF1A08847AD820798B8ACD7395" Guid="BB33CF29-4904-4030-97F8-FB3FC2B17C7D">
+                                    <File Id="fil1977D067FB6729329F45F3015B04D4C3" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\testgui\test.cpp" />
+                                </Component>
+                                <Component Id="cmp1E71A15D0F0D0AB6629327A3EF92C6E4" Guid="A013E779-262C-4D98-8CEB-7CAB36BAF83F">
+                                    <File Id="filB9C1E0875FAFCC9C105BB6C6153AB53F" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\testgui\testgui.sln" />
+                                </Component>
+                                <Component Id="cmp205168ED8CF94FF69DD28E24D1B853E5" Guid="350379CA-731E-4C82-A872-92EBAA965DD3">
+                                    <File Id="fil6C25556F2CC5E0A17600E2C5F2250423" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\testgui\testgui.vcproj" />
+                                </Component>
+                                <Directory Id="dirB2FF0F77809EBE8D70171DB48304AF90" Name="TestGUI.app.in">
+                                    <Directory Id="dirCD89CE30AD9239A948C2597E3B992D1D" Name="Contents">
+                                        <Component Id="cmp2710CF6E27EE06D53B3967CFB5B0B74F" Guid="2439D532-72E9-4C21-8466-E98DF4AD827D">
+                                            <File Id="filDBFC04253BCF39E3C5887321354BF969" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\testgui\TestGUI.app.in\Contents\Info.plist" />
+                                        </Component>
+                                        <Component Id="cmp0A41F04AD4F035A4D93757B2D5395488" Guid="2092D4B3-8B94-4109-9DD0-A2BE388CDDD5">
+                                            <File Id="fil30BBB6F1996010BA24852271B8C054E0" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\testgui\TestGUI.app.in\Contents\PkgInfo" />
+                                        </Component>
+                                        <Directory Id="dir35539117B2C59C3D66EDFCDB1B5C5D38" Name="Resources">
+                                            <Component Id="cmpBA06BDE55E6E4998092A295858C73233" Guid="171F4D79-DB51-49B0-9C94-BF38CE4634B8">
+                                                <File Id="fil9CC75E41C8FAFB9103A611482AD93743" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\testgui\TestGUI.app.in\Contents\Resources\Signal11.icns" />
+                                            </Component>
+                                            <Directory Id="dir713D4A0F99B1B148220A1F551861A01F" Name="English.lproj">
+                                                <Component Id="cmpF6E6871F9D482C14499404FBD6805230" Guid="F8A29508-5D81-480A-A12E-C880F9E9C2EF">
+                                                    <File Id="fil7A90AF0E4EF1BB7C292D01D8CFF27748" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\testgui\TestGUI.app.in\Contents\Resources\English.lproj\InfoPlist.strings" />
+                                                </Component>
+                                            </Directory>
+                                        </Directory>
+                                    </Directory>
+                                </Directory>
+                            </Directory>
+                            <Directory Id="dirDB22760E39FC083A0689B3F66803491A" Name="udev">
+                                <Component Id="cmpFEF27F3E3E1E643D33E4B650D3D714F3" Guid="622C7089-681C-4D58-94D7-175C66E1BD22">
+                                    <File Id="fil18BBFF12F25592087AE2143A8FF55EA8" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\udev\69-hid.rules" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dirF19A7E500DE404631CBC69B92113CA15" Name="windows">
+                                <Component Id="cmp25AA4F5E25CD69B20302767B1C3B0335" Guid="83D3CF1D-A325-4FC8-A714-A57AB0B224A4">
+                                    <File Id="filBF62B500FC68E70483121CCF71FB8FBD" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\CMakeLists.txt" />
+                                </Component>
+                                <Component Id="cmpEAA4EC6EDCC634FF2B30118E2545A5EB" Guid="58D085C0-3199-476F-9162-E7755126D5AF">
+                                    <File Id="filD8D73E9CBFA48536891F5B6C237F619D" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\hid.c" />
+                                </Component>
+                                <Component Id="cmp28440BB0CE842B994E097C236EC0E863" Guid="F8979794-5BAE-459B-B830-0150C4CB25E1">
+                                    <File Id="filCCF3A15341C310FBD514C9DF1310C94B" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\hidapi.rc" />
+                                </Component>
+                                <Component Id="cmp5FCD7BDC15E1D8D1CD2F193A70D79536" Guid="2A387348-2112-4C4D-AC4F-646398FF8744">
+                                    <File Id="fil86ED332642F5F4C1B74B05FE34E7C959" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\hidapi.sln" />
+                                </Component>
+                                <Component Id="cmp3F7D16682DD9F3A2643C228F6ADEA97B" Guid="30DECFBD-1E27-41A7-ADD1-B67458A48533">
+                                    <File Id="filEC9C18DF4DC6EA4DDE403082BA20831D" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\hidapi.vcproj" />
+                                </Component>
+                                <Component Id="cmp06FD568972EF731321C7393F1518944E" Guid="4B018303-1F88-4EDB-8899-CAD56B5B7FAA">
+                                    <File Id="filAD1E80B74917732EC8E6EF7765075827" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\hidapi.vcxproj" />
+                                </Component>
+                                <Component Id="cmp431D6E2B6CDF3D9BD5AA8E95EEB66347" Guid="4385993E-B07B-44FE-B2F3-04880104C138">
+                                    <File Id="fil531C00D751CA6A1FDCC6D2309B5AD252" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\hidapi_cfgmgr32.h" />
+                                </Component>
+                                <Component Id="cmp826544E163D53D3CABD14E002434BC5E" Guid="74AF24FE-97B1-4772-8215-69C7A6F1684A">
+                                    <File Id="fil251E137695244F223B7C6E8156EF91F0" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\hidapi_descriptor_reconstruct.c" />
+                                </Component>
+                                <Component Id="cmp184F4DC76100C024E0C046C8BDC03E28" Guid="2C1CF191-36C2-4F43-B7C3-04412CE15387">
+                                    <File Id="fil830A2198FCC5FE4BA303D8F576022F44" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\hidapi_descriptor_reconstruct.h" />
+                                </Component>
+                                <Component Id="cmp2255274A80878B352304B2E4909743F2" Guid="03A72CBA-AADD-4F15-8077-729D894FBF56">
+                                    <File Id="filD8A4F0F123EC2953F3302F491C0702DE" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\hidapi_hidclass.h" />
+                                </Component>
+                                <Component Id="cmpDCB7C996E184ABF5EA77CC0C8C749B94" Guid="FF0F95B4-6878-4181-BAAF-10E8E2E9A64D">
+                                    <File Id="fil154C3C37315F70A8E317B0FDDF9BBFC2" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\hidapi_hidpi.h" />
+                                </Component>
+                                <Component Id="cmp3CD08E85FFB19351C7CEE29EF35713C5" Guid="6C3E617E-468B-4C17-BC60-CE4F535C2E12">
+                                    <File Id="fil687FED0BEA9A3F7E130BA91C14A699B2" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\hidapi_hidsdi.h" />
+                                </Component>
+                                <Component Id="cmp83269CBA41997507206530418E5E7481" Guid="ABA18B19-08FE-4051-BF7F-F1DE4F4A0ADA">
+                                    <File Id="fil541554367E5F5CF8AF8279B491223FEA" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\hidapi_winapi.h" />
+                                </Component>
+                                <Component Id="cmp8C90F673313F41C2478FAB15F679A09B" Guid="731B9025-C37C-45D3-8875-DE0E287367CA">
+                                    <File Id="fil02A9FC2B044841E961E8083F06502258" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\hidtest.vcproj" />
+                                </Component>
+                                <Component Id="cmpD8FF3273ACEE07773358B40AC5FA2C21" Guid="906364F6-7461-4714-92C4-725CE5297ACF">
+                                    <File Id="fil769DC04EEDD58E797CF47C27D46CA821" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\hidtest.vcxproj" />
+                                </Component>
+                                <Component Id="cmp2F1303B1B418B795973DCDA6420B6B60" Guid="04262D1E-3A5E-4A26-846A-56EC171AC08F">
+                                    <File Id="fil4078DC2955A00A22CA7B5F88C2753421" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\Makefile-manual" />
+                                </Component>
+                                <Component Id="cmp6B119C7896407F0883D1F6E5D54730A3" Guid="3234F1D1-2292-485F-BC65-2A8700C8C8F9">
+                                    <File Id="fil17477DC99AAA3A10B16F88C230986612" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\Makefile.am" />
+                                </Component>
+                                <Component Id="cmpDA000A4D8462727B950F2317928E8D29" Guid="0372336D-0A4C-4846-8EDA-AC83FD56BD20">
+                                    <File Id="fil73E8C270FDA35CCA6F09D41D5F5DB95E" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\Makefile.mingw" />
+                                </Component>
+                                <Directory Id="dir8330C9405BF3332734D85E503381CBAC" Name="pp_data_dump">
+                                    <Component Id="cmp1E9486666B37B7BE9CAB1D33791FE951" Guid="3B399B7D-94D0-4C9C-B2B8-2634786DC591">
+                                        <File Id="filA19F1ABE357A9206FE66D3F53BE6AB81" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\pp_data_dump\CMakeLists.txt" />
+                                    </Component>
+                                    <Component Id="cmp267183204F522B92D5E51FEA4CB5B266" Guid="561C19DD-F2EC-470A-A103-66171DE2FD7B">
+                                        <File Id="filF269CF217ECC4C87E357D0C99FEAFE0C" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\pp_data_dump\pp_data_dump.c" />
+                                    </Component>
+                                    <Component Id="cmp50E3D9C67418F3749457475753B69BB2" Guid="0421CF45-0FBB-4C72-A6AE-C7769083A580">
+                                        <File Id="fil24C847F36881C0879F7E3DBFB65E5CB4" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\pp_data_dump\README.md" />
+                                    </Component>
+                                </Directory>
+                                <Directory Id="dirDE5BDDDBE31453476E3186C445688BC6" Name="test">
+                                    <Component Id="cmp2B704F2E8076E76BDF80470719B172FC" Guid="9068467D-8F84-4C65-9997-038281EA6A01">
+                                        <File Id="fil29910203733BE3AEAA0A02920540B95E" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\CMakeLists.txt" />
+                                    </Component>
+                                    <Component Id="cmp706787C008AFE3569F58B41F0BC80484" Guid="DF561F44-A419-45A6-9988-606622930CE3">
+                                        <File Id="fil4EEB99A75C7BC514CD399D50226D1673" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\hid_report_reconstructor_test.c" />
+                                    </Component>
+                                    <Directory Id="dirF372C04154042733F46D363215DBEFB6" Name="data">
+                                        <Component Id="cmpFA54A30BD9C7E16893056BFCFC31D5B5" Guid="5B504B53-6ECB-4784-A2DF-7DC12EB3633D">
+                                            <File Id="fil3FA72140CC993318C5A0E24347B59DE2" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\045E_02FF_0005_0001.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp825306FA9BAEFDCB2C95C11B2174C9D8" Guid="CE52C787-B68F-4097-83A0-629FE7EA91E5">
+                                            <File Id="fil0C71CD03A589F4FEFE245E716E61A068" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\045E_02FF_0005_0001_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp3DBCB2B9E07279E8CB4B72596A10F738" Guid="0D05E0B3-4DE2-4E45-8441-749EB672644E">
+                                            <File Id="filD886D0CF3E49FA5BCF4A2C436681CACD" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\045E_02FF_0005_0001_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp1A106414CB3BC3B4B783930BD6758A8F" Guid="889C1FBA-ADE4-4718-90DF-73D06374B115">
+                                            <File Id="filDE4A87620EEDF58B23E2F644413288A9" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046A_0011_0006_0001.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp6ED0731759C173362426E335204F624E" Guid="E37D6770-4039-4DDC-B9CD-E1E4849081A7">
+                                            <File Id="fil88B54CF384110F01D9CBB33396254370" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046A_0011_0006_0001_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpDE969325213F998BF6DBE89F2BEC1BB6" Guid="A47FE46C-0B9B-4483-B329-F3D2CC80C7EE">
+                                            <File Id="filEC75E32F68BF591677E19BBAC66002CC" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046A_0011_0006_0001_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp5CE8CE99973A903A4CE6838A04397627" Guid="6AC5799F-06DE-4BA3-9F3A-3B440AA33736">
+                                            <File Id="fil78BF9FE84405370E0B2116935BCD5222" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_0A37_0001_000C.pp_data" />
+                                        </Component>
+                                        <Component Id="cmpFD5E15AD25C19F49EA8D66B759B5C556" Guid="C8527B63-42A4-4111-8C6A-2F99C14D051B">
+                                            <File Id="fil0DBD2AB0EDC384FCBF15D6C0BF622AA3" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_0A37_0001_000C_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp07606F00E8DBD23B16EFFBE2F050EFBC" Guid="AC3668A4-195A-404D-A6AE-4E84A3B6128F">
+                                            <File Id="fil607A31A065BB21A6F769D3A369B45659" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_0A37_0001_000C_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpD367B665285345B72CE41A4C63CE4743" Guid="05C1346A-4D73-4845-A79E-BB2629179E10">
+                                            <File Id="fil2292B85F97D62711BDEFC3A5ACEAACBE" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_B010_0001_000C.pp_data" />
+                                        </Component>
+                                        <Component Id="cmpD1D47AD422396E00608A4FD99CF2C718" Guid="4BD403E6-DD54-4114-859A-0D22D0713AB2">
+                                            <File Id="fil0D42B6B431443447B2E857B5C3447173" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_B010_0001_000C_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpDD35320F5253D2CF4AB308707F7590FD" Guid="2E55636A-154A-4BBB-BBC1-F4E4A9E8736E">
+                                            <File Id="fil955E78269F25F1A901784FD7D2CEC059" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_B010_0001_000C_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp25FCDAA397525213B2FC86DFB585E2C1" Guid="F6B6D499-0680-4E86-98B6-AC6EA6E85567">
+                                            <File Id="filC6A85C2F72891F49C6D0E88790C9B3EF" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_B010_0001_FF00.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp7605B78373DA67F82354E99AB8C764AD" Guid="B28665C4-CB7D-4D47-989B-3C7CD9CC400D">
+                                            <File Id="fil021937ACE565C0403C6317334FBBA753" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_B010_0001_FF00_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp71C9C50EF2C4E3CBEBB6FB0B5AA8C05D" Guid="A7DC9B23-BBC8-4D54-94EB-FBC1C0EDD962">
+                                            <File Id="filB9C4BF77681E8E3527F6877CE91384C0" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_B010_0001_FF00_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpD78C8B2E1E4D71A3F9EFE65447DE02EF" Guid="2E27416A-DF37-4D14-BCF4-A12818B0DE7C">
+                                            <File Id="fil45CFF4151C5D36E86408175D06414E78" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_B010_0002_0001.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp8A1DC402989FBB27ABE9B779D1D366A8" Guid="2C00FC1A-17BB-43DE-B9B1-8992F23BF04A">
+                                            <File Id="fil57823AEB76E62C7300B47F65E42B18EE" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_B010_0002_0001_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp3D63F798DD99DAC5904C0A69EABDDCA3" Guid="B91E2304-0941-4070-A6F0-757D61A36544">
+                                            <File Id="fil8ACDFD430EC707A03952586F8A0F3C1A" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_B010_0002_0001_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp2A52CB38D814A94E1C5A4ED242071A94" Guid="BCA7B955-95EA-4E0C-97B0-ACB7EC77745E">
+                                            <File Id="filD468C6F800640A8C27501090FA72CBAC" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_B010_0002_FF00.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp274F231CC68B1E23DCCED6CE15C5C269" Guid="515EED79-F600-4408-8E42-51F7B69E4593">
+                                            <File Id="fil6088E3E64B69BEEE878D2BE1C5ED039A" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_B010_0002_FF00_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpEF4D24B4EEB7152B299DE1B681EB6B77" Guid="44CC6491-0BFD-4BB6-976E-E17A5D56AECC">
+                                            <File Id="fil4F08597E5F275B0B2B85100A7E388BA9" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_B010_0002_FF00_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp41D3A5928B6F738D8F539DDC1E25AC58" Guid="A3C10356-FBF8-41BC-A40C-8A8046F584CD">
+                                            <File Id="fil93117BB701E01448F62234F28D6E7606" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_B010_0006_0001.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp13971E76072C8503003BFD23E702FDA3" Guid="050DC455-3591-4B70-8F9C-3D4D5643B331">
+                                            <File Id="fil89EE8F6B05E62E8FEC0F308779910BA7" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_B010_0006_0001_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpD205799F098C24A5AD2AC5D0339FD26F" Guid="2455F24C-E882-4D89-89FF-E7ACE16990AB">
+                                            <File Id="fil3326A6DA9A5714CFC6FBA492A36D7228" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_B010_0006_0001_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp6D01C2843B5D2A5D01DBD84A40AD92FF" Guid="C53EA029-7D21-4632-84AB-0127764ECD79">
+                                            <File Id="filA76BB97E17AF72CBB40FEF0EE6CDCF4F" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C077_0002_0001.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp6A1921522760431F21E911E782E277C5" Guid="80DB10AE-4608-40A6-AD3B-D52938212AEF">
+                                            <File Id="filCBC8D0C3ACF03240899584982B8FBBE1" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C077_0002_0001_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp4CF0DFB4822A73D4373166658DA38083" Guid="90D210B3-757B-48A7-A87C-AAF0258547E6">
+                                            <File Id="fil867F0A9957B5C55D149D91D2889111D9" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C077_0002_0001_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp422845AB32B66C509CF8BA8688BDD4F5" Guid="C504DFB0-A0A9-4357-86F0-1DCD0B4FFA1C">
+                                            <File Id="filCC0F19C30F8F7D34173739F4062B3018" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C283_0004_0001.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp2BA1C4CE437E7F93E3F95490B580D8CE" Guid="BCB4A273-5605-4407-8077-182355836B4A">
+                                            <File Id="filF5811DFECA90D7B55B69F2C0BA3D79CB" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C283_0004_0001_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpCC3493D55E0457FF387DAAA9E1A0FEAF" Guid="21E0D01F-B67D-4317-A041-3AEA8599651B">
+                                            <File Id="fil7634FC8D59CF14407A85748D163F7E7A" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C283_0004_0001_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp30559A2EF2C85C01696345527228C3A7" Guid="DBE42107-02BF-40E5-BE8A-C91370B75842">
+                                            <File Id="filD335F5018B483AFB06B83911EFA1C3C5" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C52F_0001_000C.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp7DEA75E0EB9105B14CB214C8A97CCE31" Guid="C8D05F1F-5A41-4B55-9B8B-EBAB4ED1B802">
+                                            <File Id="fil31745C87D810D402C31F7C062BECFC64" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C52F_0001_000C_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpD7C112BC30544EEA63F18F2B35726EE9" Guid="FC45E49D-F58A-40B3-89D7-BB8C42942896">
+                                            <File Id="fil3E38EDEFDF73ACEB2BCD3B44C7DA751E" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C52F_0001_000C_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp82764ED98419FD4C4C388B44ED96E566" Guid="B58E826F-3717-4350-AFA3-7990DBDADDD4">
+                                            <File Id="fil412CA35E49D16F8DDF490C90473EF7FB" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C52F_0001_FF00.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp7D419535E7F35389FFF6FEE2D521A7AE" Guid="9166BE41-6C97-420F-AE51-E26817EA4072">
+                                            <File Id="filC89731AC96A68DF728EB5C47C65417AF" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C52F_0001_FF00_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpA41FFAC39DA5CDD4713226F7272478EF" Guid="3065DC36-E3FF-4E99-9902-2F9AD2E955AD">
+                                            <File Id="fil9B90FC4B642FC86865258D77496F6FDB" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C52F_0001_FF00_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp02DBEFBEB762AC5DCA9AFCEA7CDA95F4" Guid="969E65F0-4E5E-4D9B-8C78-30A59FE5E27E">
+                                            <File Id="fil9EE07E1C283A0EF679623BD813BFBCD8" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C52F_0002_0001.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp58BE400DFD4512D5A63871E30520D208" Guid="3F155990-6BAF-4BBC-A7F9-B88813FE4BBF">
+                                            <File Id="filCC38861D4DFE1D6149634E067EFB71F2" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C52F_0002_0001_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp6ED13FAF1667378C8439942501755D06" Guid="0F2BF479-413C-4340-B7BC-49F46C6086C8">
+                                            <File Id="filC5C27811C7E09BCFF43A2228DB3E5E71" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C52F_0002_0001_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpF2C5B2BD86CB7D147313FB3BFF9B7506" Guid="F66900DE-F40E-42EA-A315-C062FC238D22">
+                                            <File Id="fil6AF020B54974C20D4DBA16B3D4A39800" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C52F_0002_FF00.pp_data" />
+                                        </Component>
+                                        <Component Id="cmpE650EA69B404593A4F1BB9A12451EDD2" Guid="7A98EA90-13A9-41DD-BE3F-EDA3B0A88869">
+                                            <File Id="fil779C0079C433A4560E15FA5653DCC95B" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C52F_0002_FF00_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpC30E306C133FA92CFBB35E4A845B9274" Guid="083E042F-16DE-4508-9D8C-2E24A390A671">
+                                            <File Id="fil6B48E30B840C32F0DD10BAD5E0C36DBE" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C52F_0002_FF00_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpF562444328716DF6CB9C009AFF72701E" Guid="1C2C5CA6-14A8-41EC-9FC5-FB4B610AB3AD">
+                                            <File Id="fil08737D614611F90856935FC9B1F49495" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0001_000C.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp1B66B98549A523251BBDED8710484E9D" Guid="41C745A7-354D-42C3-A0FD-89E65DAA4ECA">
+                                            <File Id="fil5125F28221E6FE6F7927ADE29D9796F6" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0001_000C_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp006507B6CF12570ADE0DDCC6F32C3F7E" Guid="D865B919-96B9-4D1D-89DD-AA998CF7E53A">
+                                            <File Id="fil007CDC515BEA77B0FAFDFE61D0B10CE6" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0001_000C_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp2A06F0CB3113C751EE096F48AB0BA377" Guid="DECF48EE-4914-45B8-94F7-60200B149CC7">
+                                            <File Id="fil32B1D12F7154558AAFA36C4E4F1DC3B9" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0001_FF00.pp_data" />
+                                        </Component>
+                                        <Component Id="cmpCB76AD4AE6468FAE0BE2BA338A5E2BD3" Guid="AB9F9542-AE8B-49C7-95B6-1C1D34C461CD">
+                                            <File Id="fil63FBC462180E6B3B81AAC998A12E0588" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0001_FF00_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp6120372F91A652EC82E5E2886075DBAA" Guid="9E355B8B-1FAE-4D27-9976-083D6B256E10">
+                                            <File Id="filB06D277C1B2186C0F369EFAFE5C393E6" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0001_FF00_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpD0116CB093518626CF45DAE8875BF3D6" Guid="364CAC6B-38A7-431C-9BC3-57EE27883DCA">
+                                            <File Id="filF5C61485C57309CBAA9F0E192540172D" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0002_0001.pp_data" />
+                                        </Component>
+                                        <Component Id="cmpFF8BAE0E4E138E7ABFD2B10076A4B2C3" Guid="216F4323-A700-40EE-8AE8-FDA0D92CD91F">
+                                            <File Id="fil9270845BE3B32CC3BF9531434FC563A8" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0002_0001_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp99466FE69107483DC889B2E51A466955" Guid="2DE4AA57-0288-4C76-94FE-8BC9E11707EA">
+                                            <File Id="filD573F8674EFB23BFD44EF54DEB4CCACE" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0002_0001_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp7A561C5E274F65A428159E838BAC6454" Guid="C02EADE0-13D0-4D10-8292-9F19CE1EB390">
+                                            <File Id="filB21E9C380DB89F0B1339C27A6268F614" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0002_FF00.pp_data" />
+                                        </Component>
+                                        <Component Id="cmpEBB148E30A3B2069CD081D8D90400009" Guid="869C41F6-0D30-463D-B013-F4BBA23E5B70">
+                                            <File Id="filBDFAAFFA5363A79556BEA19C5D8DC5C6" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0002_FF00_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp1712C1740627D3DCDE8EF6792E575B19" Guid="A57B54CD-3016-448F-8DA7-CDB07F48D7C2">
+                                            <File Id="filB1CBB29C22637BF38BEC86E4F9E5BA80" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0002_FF00_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpF1EB8847BDDBADA228BC06F80A09F09F" Guid="06716AE6-7232-42D8-ADD3-0679166136F0">
+                                            <File Id="fil163AD41860CA9EF6BDD03318489DFC2C" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0006_0001.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp4F7BB6998C7F34F456F248A3F07096CB" Guid="8AC41CC7-1CC6-4E42-B26D-D01C5761EB35">
+                                            <File Id="filC54E183191F8573B630A36F610C6FC79" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0006_0001_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp060FA2B7DA62E878B13425C78FA7F719" Guid="F2AF8113-6F13-412A-89F8-4BBF52226ABB">
+                                            <File Id="fil0169A3A886BBDD169264D5A4FB0C6143" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0006_0001_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp7E796C74E105B96A966707B2D0824013" Guid="4AAF4C32-985C-4EEE-97BA-757636D4871F">
+                                            <File Id="fil74B914A5B487C12C157B0258BF1EB99B" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0080_0001.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp764821E0F38E75C4AA4C887373929979" Guid="45E36E6A-E463-474B-A44C-E45CA42FC59E">
+                                            <File Id="filFE78D5C19ACB9A6EF7E01D8C75C30087" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0080_0001_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp89C9DD8771D7D467B57AF4C217483252" Guid="C07F7DBA-B5C3-4699-AB1B-DB521F3EAB9A">
+                                            <File Id="filB323064EE25475AC09B9413C06DFAFC1" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\046D_C534_0080_0001_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp6F2AC9EB231998A323F5A68535D38C8C" Guid="84F14085-7EE0-456B-B95A-E24ED4BCC501">
+                                            <File Id="fil555B47439EB0EA9B39CA65FB8495A54E" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\047F_C056_0001_000C.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp4B88D57AE2306BED98B249DE6CB1A48A" Guid="6DBEB063-0C7C-47A1-85E4-C6A0CBEE349F">
+                                            <File Id="filE48DF5A73DC123D65486C45A6838D6F8" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\047F_C056_0001_000C_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp0BA90D4FE411C851512AF9EB38B5179E" Guid="8B24AB87-77F3-47EF-99F2-3ED85CF577BF">
+                                            <File Id="fil2967B4D96B99BF72F3A7D793AED7C634" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\047F_C056_0001_000C_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp0A869DDA563DE56439516D730AC00685" Guid="E5B69429-D90B-40F3-B54D-74266701F756">
+                                            <File Id="filCD39B4CEFE7D9FE788E7BA8CCD25B4CE" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\047F_C056_0003_FFA0.pp_data" />
+                                        </Component>
+                                        <Component Id="cmpC999FDD015032BD1ED7F4D09C895387E" Guid="771008F5-607D-40E3-BF73-13D7CEA266D8">
+                                            <File Id="fil6C59DF815EE38F52D95F52C80BB791FE" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\047F_C056_0003_FFA0_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpBCB9FBC8202AF0CE0CBC2E7DC96DA8FF" Guid="5F2C8421-7DEC-4341-AE4C-3C40D8E2EECC">
+                                            <File Id="fil6F3A57B59982014BC3C64FDF3EEC7CAA" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\047F_C056_0003_FFA0_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpE4DE3A7ADD10D1057431D19E3DF34826" Guid="A48B95F0-CC68-4717-AB4A-91EEEFBF5AC0">
+                                            <File Id="filCFE2E873B57275576CEB8DE9F2069656" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\047F_C056_0005_000B.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp4D398E2E22A0C6D9D1C6301E77550BB5" Guid="FEDCB4AC-BA59-46D2-920A-E81269CEC167">
+                                            <File Id="fil3B582CEE9CF401CEC9012F40699060F5" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\047F_C056_0005_000B_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp856E5804C5006AEE9A7F464255FF7B29" Guid="8AA7737D-E6A5-4682-A86B-B5AC6F08264C">
+                                            <File Id="fil127248BCB415A32ECC7C446F7C93EF08" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\047F_C056_0005_000B_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpCC81E18408F15231F7C48183FAA06A88" Guid="B0B0F212-9D4B-4BFF-95BA-E552C4F83E29">
+                                            <File Id="fil574A0B0801274293DD462A135FF16458" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\1532_00A3_0002_0001.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp454F366B93E6B1F4C156850863947892" Guid="36A46BE7-AE0B-4CF9-B6DF-1B791408C5DB">
+                                            <File Id="fil24C9D90080D7306E5E2924A7D447F8C5" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\1532_00A3_0002_0001_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp717F07F0BCE762260DDB803FCAC99231" Guid="2D21B15F-E49C-419C-B060-4DD4DA37F8F2">
+                                            <File Id="fil3564A471871E18401F669973D1A07816" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\1532_00A3_0002_0001_real.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmp2E94B27E84D8386AF8E4B6E9AC999AA4" Guid="A76DB30F-0245-4897-B2BC-DAA324C24962">
+                                            <File Id="filCB3A31B8357D53318E44DCE4E793122C" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\17CC_1130_0000_FF01.pp_data" />
+                                        </Component>
+                                        <Component Id="cmp7B5D0C77623F2059112873D9A90A4974" Guid="1E8F110D-7CCD-47E3-BD96-EF377772F336">
+                                            <File Id="filBC2CDD3CB42323BFBA11F7540F314AE3" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\17CC_1130_0000_FF01_expected.rpt_desc" />
+                                        </Component>
+                                        <Component Id="cmpB7E05150ADAA317DAEB5FE1BF4A994EC" Guid="772C93EB-D5D8-4C57-A435-E53B71B0D855">
+                                            <File Id="filC82940A7BE1FA7D5580453D51F3533C2" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\hidapi\windows\test\data\17CC_1130_0000_FF01_real.rpt_desc" />
+                                        </Component>
+                                    </Directory>
+                                </Directory>
+                            </Directory>
+                        </Directory>
+                        <Directory Id="dir64B680896CBCBD87DDBC2997CAD506FD" Name="prebuilds">
+                            <Directory Id="dirB406DE25D45BC30835E842CF3EE5F5AE" Name="HID-darwin-arm64">
+                                <Component Id="cmpC710D8BD2BF3FD480985B81778E5578F" Guid="3507ED62-7869-4331-9E2F-0064560A6B04">
+                                    <File Id="filC7F62CF72BBB5EF6F13C6BE73220DC5E" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\prebuilds\HID-darwin-arm64\node-napi-v4.node" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dirB48F4573E1E0E626FC6958674A707246" Name="HID-darwin-x64">
+                                <Component Id="cmpA7A7C909D66D13CA0D04F017FB8A4596" Guid="40B7B650-B5C8-4065-9FBB-C922E0B22D5F">
+                                    <File Id="filE71BED69C65AC0FBC5EF4B353223C0E0" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\prebuilds\HID-darwin-x64\node-napi-v4.node" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dirEEDBCE25459A9C388DBA7705587371FA" Name="HID-linux-arm">
+                                <Component Id="cmp96EB3C503C9DFD1851BF0B1142487176" Guid="715BEF7F-F845-4AA0-9F4D-0DB100B7992A">
+                                    <File Id="fil5F840945E4A6F03FA80D82EC5D673FB7" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\prebuilds\HID-linux-arm\node-napi-v4.node" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dirA531FB30FFEB7C6CC6295F3372DDA960" Name="HID-linux-arm64">
+                                <Component Id="cmp8FE350B21906BC242AFF0F944AC85274" Guid="5E01645A-484B-4681-8E3C-A9287920EA0C">
+                                    <File Id="filB6BA175C53B734EC79293AF77B1EFE75" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\prebuilds\HID-linux-arm64\node-napi-v4.node" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dir600A05B715057F6C387AD9B5F111DC4C" Name="HID-linux-x64">
+                                <Component Id="cmpA2F3644D1DB3B9CEB9E69665F6B10874" Guid="52B781FD-B222-4FCC-8FF9-2C7D6AAA5135">
+                                    <File Id="fil02DF3587CB135FB3676E22B2DF26A4D0" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\prebuilds\HID-linux-x64\node-napi-v4.node" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dirD1632F214A66E4A2BD8B5940ACCD401B" Name="HID-linux-x64-musl">
+                                <Component Id="cmpA3CD50DC2A3B30AD53CB768ADA761B3E" Guid="792925CE-9740-4161-95F5-281D91E9E3BB">
+                                    <File Id="filDED7241CC4A08551916BEECDBF2D69EE" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\prebuilds\HID-linux-x64-musl\node-napi-v4.node" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dirAA152DBEA8E98AC893C162C476C76910" Name="HID-win32-arm64">
+                                <Component Id="cmp8768DD6971791219D2BC871B2A3C3332" Guid="36713426-074A-4032-839C-D1AEBB02D5D8">
+                                    <File Id="filD31596A3BA8F41CAECA22A469169A9BA" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\prebuilds\HID-win32-arm64\node-napi-v4.node" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dir4CD8AE46C80F73A33C051A9548A6B055" Name="HID-win32-ia32">
+                                <Component Id="cmpDE08A30CACDCF55E989B2CE9384365D3" Guid="D976C29E-ED79-459C-B5B5-719800A52E71">
+                                    <File Id="filA01BE705F0C67876615DD443D7E551CD" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\prebuilds\HID-win32-ia32\node-napi-v4.node" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dirC2B6C315BBEA822FCC2F7920C1FC9D04" Name="HID-win32-x64">
+                                <Component Id="cmp6A74DFCB81F8CE7C1230F03E8A90515C" Guid="C1009E3B-5069-44E9-9A17-D012A80159A9">
+                                    <File Id="fil1E872E9A25C75A8CADDCBF2194225109" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\prebuilds\HID-win32-x64\node-napi-v4.node" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dirF05926C69EDF14A10301F061FC6DDE38" Name="HID_hidraw-linux-arm">
+                                <Component Id="cmp0777D6C36C32105C71EB48F5BEE969FA" Guid="A63E43FC-4646-4C6B-814C-2F277F961EED">
+                                    <File Id="fil1336154D89BCE89E5289245C36A7D019" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\prebuilds\HID_hidraw-linux-arm\node-napi-v4.node" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dir2F1902A7A10B6E526912F7626BD970AD" Name="HID_hidraw-linux-arm64">
+                                <Component Id="cmp0B4F6A89C5C2351B8FFDA522FC6EE990" Guid="66A8CF12-4CE6-48F1-9B03-9BE4C6A31D57">
+                                    <File Id="fil5C8A4CE1083DE4C852AFDE339E8CEDE3" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\prebuilds\HID_hidraw-linux-arm64\node-napi-v4.node" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dirE5AEFEF484CFA6D45910C95789D86ED6" Name="HID_hidraw-linux-x64">
+                                <Component Id="cmp4230EF74582CAB3C40E427593DAB3CBA" Guid="A7EF7FE6-1E53-48B7-9984-7C74621D8C85">
+                                    <File Id="fil0844347C788A5942751A2DCDB572C329" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\prebuilds\HID_hidraw-linux-x64\node-napi-v4.node" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="dirB96DF32E699CF82F740CFEAEEC1DAD8E" Name="HID_hidraw-linux-x64-musl">
+                                <Component Id="cmp72A193EC75902809199440865B716FCE" Guid="95D8CA84-00B1-43A1-BAC3-0C4B8D78FF3D">
+                                    <File Id="fil1B352DB07EAF48725222655BFEDCE528" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\prebuilds\HID_hidraw-linux-x64-musl\node-napi-v4.node" />
+                                </Component>
+                            </Directory>
+                        </Directory>
+                        <Directory Id="dir50B2E16B59EF2A9CE5AFB1AB51B2910B" Name="src">
+                            <Component Id="cmp4F0486A400EF553F07EE7A4994B0E46F" Guid="1DD9D59A-4E8C-40EA-A570-E108DFAB5E40">
+                                <File Id="filEE3F4A772DA899883780FB31382F23EF" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\src\devices.cc" />
+                            </Component>
+                            <Component Id="cmp666E7AAE6B18D73AB447F30B51C04DD0" Guid="48C66AF9-EA04-45F3-B672-D7D9BEDE3809">
+                                <File Id="fil061750A8E40D61112E1A1A862E5C1133" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\src\devices.h" />
+                            </Component>
+                            <Component Id="cmp2F3FEC8527701BE9FD98890308A8DB8E" Guid="DC94C6CB-F1DF-48E9-9467-4C6A95FBE45E">
+                                <File Id="fil0186B05860F342E3009595148992AFC4" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\src\exports.cc" />
+                            </Component>
+                            <Component Id="cmp7B64AB325DC4FF828C7DBD3AF1D19C0B" Guid="2A31C745-35E1-4E2A-A3A3-16C6B584C79F">
+                                <File Id="filAC520630F22E47A0D963B175DA2FA6D0" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\src\HID.cc" />
+                            </Component>
+                            <Component Id="cmp13A54CBA33D57FA120F1C913B8595339" Guid="E0A87DC6-475B-4942-9128-00EA2C0F1831">
+                                <File Id="filB01B92490A407EBDFB0868BBAE093AAD" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\src\HID.h" />
+                            </Component>
+                            <Component Id="cmp84C2CD638E570D1A6BBEF8B1812877F7" Guid="B3017645-D293-435D-B1D7-A8E39FAB264B">
+                                <File Id="fil7031E69BC67CBFF70708E1D1747D0FD0" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\src\HIDAsync.cc" />
+                            </Component>
+                            <Component Id="cmp348EC10733AB8688A7230F7065C3FCC6" Guid="4D40034B-C0D5-4718-B14C-DC15A4EA1782">
+                                <File Id="filEAE571F2E8CE9CA00BFFF03179C41DFC" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\src\HIDAsync.h" />
+                            </Component>
+                            <Component Id="cmp1167970DC0E50C7421BC2A4BFACF46C2" Guid="0D03588C-95CE-4F9D-9FCB-EBD7E762E3E3">
+                                <File Id="fil025A88948EA45AC3F49169C323869D43" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\src\read.cc" />
+                            </Component>
+                            <Component Id="cmp971E2B03B15BDCF189556E2755246615" Guid="DF4AB32E-233D-4773-A217-7C007531C572">
+                                <File Id="fil74A9A1600E6249C0FDAB62AAFE42F47F" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\src\read.h" />
+                            </Component>
+                            <Component Id="cmpE8647558192DD4B8462024F12B5693E0" Guid="F6C2DEF4-1767-4ED9-93D2-274C47BCC859">
+                                <File Id="filCAB058A1A4D55CC7836C50526B260944" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\src\show-devices.js" />
+                            </Component>
+                            <Component Id="cmp484AB07486D6B67DD9F90C385E8D21B4" Guid="51BB5FD1-0E5C-4294-A7AC-19C084528041">
+                                <File Id="fil39237588F63D1E1A4563D8B7C1D8E8A6" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\src\util.cc" />
+                            </Component>
+                            <Component Id="cmp82DC3174809FCA3877180C507AA32C38" Guid="AF97D301-482F-44F8-89E3-FE810CA8374D">
+                                <File Id="fil79CF6C7B3681C375641BCCAE039D24EE" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\node-hid\src\util.h" />
+                            </Component>
+                        </Directory>
+                    </Directory>
+                    <Directory Id="dirBE82BAEDA6936A07018E70528F7A7CAB" Name="pkg-prebuilds">
+                        <Component Id="cmp555011D28DB0FF8681B7E8CA6A7F8E22" Guid="5896B885-CAFA-46CA-BA78-41103BC02EB8">
+                            <File Id="filDCCA0792AD38122E5642D34E22AF576C" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\pkg-prebuilds\bindings.d.ts" />
+                        </Component>
+                        <Component Id="cmp4C91295075F5A7F8D31656E4C3B288F5" Guid="42FE43DE-2B12-4E04-B908-6F2B0F54A620">
+                            <File Id="fil847A25BA0BE0F6B84D3CF47BBE72C9BD" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\pkg-prebuilds\bindings.js" />
+                        </Component>
+                        <Component Id="cmpCD8FBA4C42AB6B01D25C341960C85CF9" Guid="B10A16D0-8DD5-4E84-B3F1-A92D0D3E845F">
+                            <File Id="filED2271DA7CDCDD127D5C4324D8A7933A" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\pkg-prebuilds\LICENSE" />
+                        </Component>
+                        <Component Id="cmp1D8CCE744471EEA09141311EBE40F6A7" Guid="5ADD6E0F-16A0-4A8F-BB6E-6D78F5A2BC25">
+                            <File Id="filE8F4E512E7A16DD386D8B268DF5D234D" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\pkg-prebuilds\package.json" />
+                        </Component>
+                        <Component Id="cmp847A447D4BC43C3F583DC990E2067AE6" Guid="E8636FD1-5EA9-4709-957E-DBC7C199D6A5">
+                            <File Id="fil11FAD0011FEBF1987042845DF78B996F" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\pkg-prebuilds\README.md" />
+                        </Component>
+                        <Directory Id="dir47664F9103D6213882FFCF1C1616D9A1" Name="bin">
+                            <Component Id="cmpE85F78FB8ECDE48ED4F31847A7594D6F" Guid="F5434D99-52D5-4C4D-A4D9-ABD25F43D0CC">
+                                <File Id="fil4F9630DEF52D704266CB0F8734F07260" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\pkg-prebuilds\bin\copy.mjs" />
+                            </Component>
+                            <Component Id="cmpAC15E09ABD494511FF3A39F7AC3E2E43" Guid="5997B13D-E87F-4AC3-8772-46B76D2AFFC9">
+                                <File Id="fil884CE01A497CDE43F5CD314709E4C3FB" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\pkg-prebuilds\bin\verify.mjs" />
+                            </Component>
+                        </Directory>
+                        <Directory Id="dir000205F3E083DA30D6322216B4A51481" Name="lib">
+                            <Component Id="cmp4E8D6FA17CB41C713C8810E69F9F7A81" Guid="917358B9-B370-4E35-845D-E7130FB19D2B">
+                                <File Id="filDC267BC7745F173F551A977F747FA34C" KeyPath="yes" Source="$(var.StageDir)\app\node_modules\pkg-prebuilds\lib\prebuild.js" />
+                            </Component>
+                        </Directory>
+                    </Directory>
+                </Directory>
+                <Directory Id="dirC064BD98FDC61ECB5A59DCF357D1B32F" Name="ui">
+                    <Component Id="cmp6B5225D169EBE5212B31C99274D9B6E0" Guid="6A267001-F6C5-4058-9058-235468D001E5">
+                        <File Id="filBD257C34F9129F5933F1478672B38DAB" KeyPath="yes" Source="$(var.StageDir)\app\ui\app.js" />
+                    </Component>
+                    <Component Id="cmpE1DF61A22DDBD41890F8A52EF1807B0E" Guid="0AED4063-7C82-46F5-B7B2-E2D6450151F5">
+                        <File Id="fil4322D71A0905C6AE85883DC09F8777D1" KeyPath="yes" Source="$(var.StageDir)\app\ui\index.html" />
+                    </Component>
+                    <Component Id="cmpA4F8E8F96F13F827EE6D3344E350A03F" Guid="A9C01382-9C12-4F6F-81B9-6CFBBA1F0E08">
+                        <File Id="fil67908F83F34B503B1ABFB42D3E0AA58A" KeyPath="yes" Source="$(var.StageDir)\app\ui\styles.css" />
+                    </Component>
+                    <Directory Id="dir3C1992F6034EFAF8F63D4569000C0678" Name="assets">
+                        <Component Id="cmpFD29954FCEC917EB3E1184BBC13C0CEE" Guid="EAC82A02-CFF4-4BEB-A2E0-33177ADF702C">
+                            <File Id="filF0A0CBAF671348297E6F3AC4EF1D4D94" KeyPath="yes" Source="$(var.StageDir)\app\ui\assets\vt3.png" />
+                        </Component>
+                    </Directory>
+                </Directory>
+            </Directory>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="AppFiles">
+            <ComponentRef Id="cmp104087D18B25A9A8D2ECC5B6EA2AE79B" />
+            <ComponentRef Id="cmp3ED4B6E14797367C1383E408A6961B85" />
+            <ComponentRef Id="cmp84AB1D3C237F5F2DE9FB68C45649370B" />
+            <ComponentRef Id="cmp833E20356BBC962E0CF21468EDA2CEC6" />
+            <ComponentRef Id="cmp74C002F3E7887C8150BBB5707FA71B13" />
+            <ComponentRef Id="cmpF1848385C2826C0A49D68522AAD60E2F" />
+            <ComponentRef Id="cmpAFDEA980929120933B35E162C78AD34E" />
+            <ComponentRef Id="cmp0D25CE37FEF1D8920C71E893D1AF34A7" />
+            <ComponentRef Id="cmpF256166F8388C32AF146B25DB35C302E" />
+            <ComponentRef Id="cmpB2C67A01F78AA4CB89F507C7892222F0" />
+            <ComponentRef Id="cmp561AFAE882773E1005172B2EA0CC0D45" />
+            <ComponentRef Id="cmpC3F0B527DC690D516260A9B2F40101D3" />
+            <ComponentRef Id="cmp665AAC56D7536D966091A1D2AF81549B" />
+            <ComponentRef Id="cmp7A8B727184504DB799055D17EFF030D7" />
+            <ComponentRef Id="cmp9B6EC2901CAF8328BD2B8ABBA9C15CF8" />
+            <ComponentRef Id="cmp8A27456B482A011CE7C1F311674A1D99" />
+            <ComponentRef Id="cmpA77F659A9CAFE8C78EDA7822F12A8D44" />
+            <ComponentRef Id="cmp9B07A151AD6E0B409BADA879CFE25A07" />
+            <ComponentRef Id="cmpFF1A75A902A61A09F276F1F09077BA34" />
+            <ComponentRef Id="cmp0E4F7793BCB90DB43B938A85EFD7451C" />
+            <ComponentRef Id="cmp85578C2102A5C4D3CF5411AF149903A5" />
+            <ComponentRef Id="cmp681AEC973463D6F958E133014ACC21C8" />
+            <ComponentRef Id="cmp9DC58EF3BE86FF8075E27563F62BCD98" />
+            <ComponentRef Id="cmp4A98A7A8ED7DBB387654EE0F63F7A3BB" />
+            <ComponentRef Id="cmp720F498346D1DD54B347F25044442516" />
+            <ComponentRef Id="cmpCE2C9A290AD16FFCC7A2D1047BC012FC" />
+            <ComponentRef Id="cmp63C666C4227458A048C47F25C90753AE" />
+            <ComponentRef Id="cmp212A498AFA34600DC8ACFD15FF36412F" />
+            <ComponentRef Id="cmp6FEBD14F15954712E2D07F994E1DDE39" />
+            <ComponentRef Id="cmp081EE50B562C57EB07C967F24721EFE4" />
+            <ComponentRef Id="cmpD70EC72644048B9336DCF4D4252CF2E0" />
+            <ComponentRef Id="cmpABE9A9E7783C75E1173C84D3107618C4" />
+            <ComponentRef Id="cmpF7D5931F8C61EFA25957D843F761140D" />
+            <ComponentRef Id="cmpEAAE4337D4DF82ED05BA894A6EA358C6" />
+            <ComponentRef Id="cmp0F09F715D7907EAA557ADF1DA230C85D" />
+            <ComponentRef Id="cmp5FB2F1484D1FA657B0EFE20E0941E329" />
+            <ComponentRef Id="cmp33FD0C3A607C05C22B465A84B54DF7DB" />
+            <ComponentRef Id="cmpA93BC1212543767D12F59F6C887B734A" />
+            <ComponentRef Id="cmp4455E213882FF4C56D76DA784D217F43" />
+            <ComponentRef Id="cmpAF3FA196DC3E6791F56E4596A00D5A7F" />
+            <ComponentRef Id="cmp67243CA70C6312B4FA1BC09AC1CC94AF" />
+            <ComponentRef Id="cmp4011ED367667D623158CCD8452021589" />
+            <ComponentRef Id="cmp930621D176454D2078DF0FBA3536058A" />
+            <ComponentRef Id="cmp07B8A5E8B314CED799A7A7ECAD857F9E" />
+            <ComponentRef Id="cmpA1DE61BA447C8D6249D1C39A07C54505" />
+            <ComponentRef Id="cmpB2810C6FDD1B3E1F283BE5AA07EE228E" />
+            <ComponentRef Id="cmpCF990DC8AF1AA968AF4F1834B9F15C22" />
+            <ComponentRef Id="cmp945B1BE14EED1EE547CF41FA9173BBE0" />
+            <ComponentRef Id="cmp1A0B42033580C0C369481D669AD60657" />
+            <ComponentRef Id="cmp0D28CF6A6C28239954CCB4626C844B20" />
+            <ComponentRef Id="cmp82CAEF8D0944120ADB7EAEFBE31D9DE4" />
+            <ComponentRef Id="cmpEB8CCC3917C5A76AAE606E702090536F" />
+            <ComponentRef Id="cmp99930865196AF47C4B56BB7B69AF1405" />
+            <ComponentRef Id="cmp7064DCEEB9217757865D5945ECC00071" />
+            <ComponentRef Id="cmpDF54A51E067E449E995F573103C0974F" />
+            <ComponentRef Id="cmp3E23954B5B8F280450071BCBE39E670E" />
+            <ComponentRef Id="cmp6EDD0ED9EB81E796724D2C9E82934E09" />
+            <ComponentRef Id="cmp02FDF96287A27CEA62CABF61B90A448E" />
+            <ComponentRef Id="cmp8CA51E4FE5624D9B70E42AF2003ED923" />
+            <ComponentRef Id="cmpCC3801FE9FB7234CBE717579EA32EEB9" />
+            <ComponentRef Id="cmp1DDE2F0C540A6656FABC11F26BB2D31F" />
+            <ComponentRef Id="cmpB8F1CFCA7A97C68B36AACEB94911456C" />
+            <ComponentRef Id="cmp6A03820C2A27C310C1709036920B698B" />
+            <ComponentRef Id="cmp143F0DADB85DA69DAAF9B864DD011875" />
+            <ComponentRef Id="cmp8AC9CA628641D1DDE874CF68269290A2" />
+            <ComponentRef Id="cmp4109602D65E488FF749AD51713476351" />
+            <ComponentRef Id="cmpC404E53CB9283DE625D8B519EEA5EE7F" />
+            <ComponentRef Id="cmpD9CB44A3B53507E186ED19B72165CFEC" />
+            <ComponentRef Id="cmpC90BBFADE45D1B98C7BE86EEE18F9E91" />
+            <ComponentRef Id="cmpBBB69A3A79556E9C05820E7750AC883D" />
+            <ComponentRef Id="cmpA907705C036E768BB89365336F0D16CF" />
+            <ComponentRef Id="cmp9F6D987BB3D520D51BC1E730DFA9C344" />
+            <ComponentRef Id="cmpB9153F7A897426BEEADCACDAE5902EE8" />
+            <ComponentRef Id="cmpA76CC413A0756A38920BF2208C873395" />
+            <ComponentRef Id="cmp3285451F9A8D14A508A27F2C6C6B773D" />
+            <ComponentRef Id="cmp64572B5BB99F339D73D7244B156C8ED9" />
+            <ComponentRef Id="cmp3EB6A40D63494073DBF553B1762A2645" />
+            <ComponentRef Id="cmpC6FCD5704D3925014D681B898546354E" />
+            <ComponentRef Id="cmp378252469D5DA2F29C48A80F841E8F31" />
+            <ComponentRef Id="cmp102B8B26DF06816A1376E8C0446D7D81" />
+            <ComponentRef Id="cmp079A4B7626E7E8E64C2A562990195789" />
+            <ComponentRef Id="cmp42546EC4F15F5BFC2AB4DA7B89EA312D" />
+            <ComponentRef Id="cmp13B5AD85EFF4420085E2AAA3A5727510" />
+            <ComponentRef Id="cmpECE9FD4FC632858C404C956FE5E542FE" />
+            <ComponentRef Id="cmp93DA4B537E32ED3A89777109E85A93EF" />
+            <ComponentRef Id="cmp4FD2C1B0ADDD2FBE5809B4AB42D39ACE" />
+            <ComponentRef Id="cmp760BCAC01052E1B061F28D3948B6A1EF" />
+            <ComponentRef Id="cmpA9B4F78A72D55E08E36F3E493E172301" />
+            <ComponentRef Id="cmp9DEBD9CC348F8BBDA3605890EEB4F046" />
+            <ComponentRef Id="cmp90F32606DBE69EBA50BCEB933A8B4E4A" />
+            <ComponentRef Id="cmp41814D142F363C1C7A4A773ABF32F2B4" />
+            <ComponentRef Id="cmp7A5D190050B79CC8E2A3325D83F7B4A0" />
+            <ComponentRef Id="cmp4175BA82A2B28E6B5FAFCABD6D9B33BB" />
+            <ComponentRef Id="cmp793B3D7E6ADC509DC83F9B8EEF18E534" />
+            <ComponentRef Id="cmpDF4A00A602E88BE34A975DE8BEDD2CE6" />
+            <ComponentRef Id="cmp2E8E198AC918D0892552C00D9DEB3DB1" />
+            <ComponentRef Id="cmp597698EACC9D51E7C1B8DDB4706501AE" />
+            <ComponentRef Id="cmpF8457AFF22756DCA6CE1D6C5A230F067" />
+            <ComponentRef Id="cmpAFD9BD37B941C0873CBEBF0C3F77174C" />
+            <ComponentRef Id="cmp0DF167F86A296E944E4D0630F19C1016" />
+            <ComponentRef Id="cmpDF9F59B1E2D81F8B31641031A31DF19A" />
+            <ComponentRef Id="cmpDB86B0D32DFD188E6984436863D8B6B8" />
+            <ComponentRef Id="cmp17456184CF114143110791BA3B54F17F" />
+            <ComponentRef Id="cmp6B9E11AAAC286CE41AD5907979BEF88B" />
+            <ComponentRef Id="cmpE749B2C5D98482EA5A8CF1F91D00B91A" />
+            <ComponentRef Id="cmp46CDE839F90D7C559A9E1CD7C598DC60" />
+            <ComponentRef Id="cmpFF78C59B504A21AF08AA371AF7A4B2F6" />
+            <ComponentRef Id="cmp80B0E182802FE85573B4AB02BB05B7FB" />
+            <ComponentRef Id="cmpC4D46F9370D2E5220F8F416CF5FB0F1A" />
+            <ComponentRef Id="cmp74D2D1A3AAF304AA5044D777DE8B6F05" />
+            <ComponentRef Id="cmp274D538A477A5037D5137314E20B2526" />
+            <ComponentRef Id="cmp2A8913B7E9D73A74CB29FA648EF39E6B" />
+            <ComponentRef Id="cmpA2950580005CBDBBFC22E0E29B6B88D6" />
+            <ComponentRef Id="cmpA0CA4D5391192790F05BFE8C71BB3894" />
+            <ComponentRef Id="cmpF9CFDFA746362E6C4A5D7656540A7964" />
+            <ComponentRef Id="cmp88D7D2676C8ACBD616A68BD0F298F3AB" />
+            <ComponentRef Id="cmp9E7A45B86413A33A474E8D41018EE56F" />
+            <ComponentRef Id="cmpD04E0D6C15C113886000126305BA5A08" />
+            <ComponentRef Id="cmp08A27CE928BBC2EC9235D664F09ECC5F" />
+            <ComponentRef Id="cmp9EE5C931D35A8BB2A9484E62AFC7D457" />
+            <ComponentRef Id="cmp75DBA116CF21C4884E62E73003D0B93E" />
+            <ComponentRef Id="cmp58B54F84E3223F425D6E36CE65B11530" />
+            <ComponentRef Id="cmpF4997D3EC6FE2BEDA6EF2BE51E98B2D1" />
+            <ComponentRef Id="cmpD113FCDF1A08847AD820798B8ACD7395" />
+            <ComponentRef Id="cmp1E71A15D0F0D0AB6629327A3EF92C6E4" />
+            <ComponentRef Id="cmp205168ED8CF94FF69DD28E24D1B853E5" />
+            <ComponentRef Id="cmp2710CF6E27EE06D53B3967CFB5B0B74F" />
+            <ComponentRef Id="cmp0A41F04AD4F035A4D93757B2D5395488" />
+            <ComponentRef Id="cmpBA06BDE55E6E4998092A295858C73233" />
+            <ComponentRef Id="cmpF6E6871F9D482C14499404FBD6805230" />
+            <ComponentRef Id="cmpFEF27F3E3E1E643D33E4B650D3D714F3" />
+            <ComponentRef Id="cmp25AA4F5E25CD69B20302767B1C3B0335" />
+            <ComponentRef Id="cmpEAA4EC6EDCC634FF2B30118E2545A5EB" />
+            <ComponentRef Id="cmp28440BB0CE842B994E097C236EC0E863" />
+            <ComponentRef Id="cmp5FCD7BDC15E1D8D1CD2F193A70D79536" />
+            <ComponentRef Id="cmp3F7D16682DD9F3A2643C228F6ADEA97B" />
+            <ComponentRef Id="cmp06FD568972EF731321C7393F1518944E" />
+            <ComponentRef Id="cmp431D6E2B6CDF3D9BD5AA8E95EEB66347" />
+            <ComponentRef Id="cmp826544E163D53D3CABD14E002434BC5E" />
+            <ComponentRef Id="cmp184F4DC76100C024E0C046C8BDC03E28" />
+            <ComponentRef Id="cmp2255274A80878B352304B2E4909743F2" />
+            <ComponentRef Id="cmpDCB7C996E184ABF5EA77CC0C8C749B94" />
+            <ComponentRef Id="cmp3CD08E85FFB19351C7CEE29EF35713C5" />
+            <ComponentRef Id="cmp83269CBA41997507206530418E5E7481" />
+            <ComponentRef Id="cmp8C90F673313F41C2478FAB15F679A09B" />
+            <ComponentRef Id="cmpD8FF3273ACEE07773358B40AC5FA2C21" />
+            <ComponentRef Id="cmp2F1303B1B418B795973DCDA6420B6B60" />
+            <ComponentRef Id="cmp6B119C7896407F0883D1F6E5D54730A3" />
+            <ComponentRef Id="cmpDA000A4D8462727B950F2317928E8D29" />
+            <ComponentRef Id="cmp1E9486666B37B7BE9CAB1D33791FE951" />
+            <ComponentRef Id="cmp267183204F522B92D5E51FEA4CB5B266" />
+            <ComponentRef Id="cmp50E3D9C67418F3749457475753B69BB2" />
+            <ComponentRef Id="cmp2B704F2E8076E76BDF80470719B172FC" />
+            <ComponentRef Id="cmp706787C008AFE3569F58B41F0BC80484" />
+            <ComponentRef Id="cmpFA54A30BD9C7E16893056BFCFC31D5B5" />
+            <ComponentRef Id="cmp825306FA9BAEFDCB2C95C11B2174C9D8" />
+            <ComponentRef Id="cmp3DBCB2B9E07279E8CB4B72596A10F738" />
+            <ComponentRef Id="cmp1A106414CB3BC3B4B783930BD6758A8F" />
+            <ComponentRef Id="cmp6ED0731759C173362426E335204F624E" />
+            <ComponentRef Id="cmpDE969325213F998BF6DBE89F2BEC1BB6" />
+            <ComponentRef Id="cmp5CE8CE99973A903A4CE6838A04397627" />
+            <ComponentRef Id="cmpFD5E15AD25C19F49EA8D66B759B5C556" />
+            <ComponentRef Id="cmp07606F00E8DBD23B16EFFBE2F050EFBC" />
+            <ComponentRef Id="cmpD367B665285345B72CE41A4C63CE4743" />
+            <ComponentRef Id="cmpD1D47AD422396E00608A4FD99CF2C718" />
+            <ComponentRef Id="cmpDD35320F5253D2CF4AB308707F7590FD" />
+            <ComponentRef Id="cmp25FCDAA397525213B2FC86DFB585E2C1" />
+            <ComponentRef Id="cmp7605B78373DA67F82354E99AB8C764AD" />
+            <ComponentRef Id="cmp71C9C50EF2C4E3CBEBB6FB0B5AA8C05D" />
+            <ComponentRef Id="cmpD78C8B2E1E4D71A3F9EFE65447DE02EF" />
+            <ComponentRef Id="cmp8A1DC402989FBB27ABE9B779D1D366A8" />
+            <ComponentRef Id="cmp3D63F798DD99DAC5904C0A69EABDDCA3" />
+            <ComponentRef Id="cmp2A52CB38D814A94E1C5A4ED242071A94" />
+            <ComponentRef Id="cmp274F231CC68B1E23DCCED6CE15C5C269" />
+            <ComponentRef Id="cmpEF4D24B4EEB7152B299DE1B681EB6B77" />
+            <ComponentRef Id="cmp41D3A5928B6F738D8F539DDC1E25AC58" />
+            <ComponentRef Id="cmp13971E76072C8503003BFD23E702FDA3" />
+            <ComponentRef Id="cmpD205799F098C24A5AD2AC5D0339FD26F" />
+            <ComponentRef Id="cmp6D01C2843B5D2A5D01DBD84A40AD92FF" />
+            <ComponentRef Id="cmp6A1921522760431F21E911E782E277C5" />
+            <ComponentRef Id="cmp4CF0DFB4822A73D4373166658DA38083" />
+            <ComponentRef Id="cmp422845AB32B66C509CF8BA8688BDD4F5" />
+            <ComponentRef Id="cmp2BA1C4CE437E7F93E3F95490B580D8CE" />
+            <ComponentRef Id="cmpCC3493D55E0457FF387DAAA9E1A0FEAF" />
+            <ComponentRef Id="cmp30559A2EF2C85C01696345527228C3A7" />
+            <ComponentRef Id="cmp7DEA75E0EB9105B14CB214C8A97CCE31" />
+            <ComponentRef Id="cmpD7C112BC30544EEA63F18F2B35726EE9" />
+            <ComponentRef Id="cmp82764ED98419FD4C4C388B44ED96E566" />
+            <ComponentRef Id="cmp7D419535E7F35389FFF6FEE2D521A7AE" />
+            <ComponentRef Id="cmpA41FFAC39DA5CDD4713226F7272478EF" />
+            <ComponentRef Id="cmp02DBEFBEB762AC5DCA9AFCEA7CDA95F4" />
+            <ComponentRef Id="cmp58BE400DFD4512D5A63871E30520D208" />
+            <ComponentRef Id="cmp6ED13FAF1667378C8439942501755D06" />
+            <ComponentRef Id="cmpF2C5B2BD86CB7D147313FB3BFF9B7506" />
+            <ComponentRef Id="cmpE650EA69B404593A4F1BB9A12451EDD2" />
+            <ComponentRef Id="cmpC30E306C133FA92CFBB35E4A845B9274" />
+            <ComponentRef Id="cmpF562444328716DF6CB9C009AFF72701E" />
+            <ComponentRef Id="cmp1B66B98549A523251BBDED8710484E9D" />
+            <ComponentRef Id="cmp006507B6CF12570ADE0DDCC6F32C3F7E" />
+            <ComponentRef Id="cmp2A06F0CB3113C751EE096F48AB0BA377" />
+            <ComponentRef Id="cmpCB76AD4AE6468FAE0BE2BA338A5E2BD3" />
+            <ComponentRef Id="cmp6120372F91A652EC82E5E2886075DBAA" />
+            <ComponentRef Id="cmpD0116CB093518626CF45DAE8875BF3D6" />
+            <ComponentRef Id="cmpFF8BAE0E4E138E7ABFD2B10076A4B2C3" />
+            <ComponentRef Id="cmp99466FE69107483DC889B2E51A466955" />
+            <ComponentRef Id="cmp7A561C5E274F65A428159E838BAC6454" />
+            <ComponentRef Id="cmpEBB148E30A3B2069CD081D8D90400009" />
+            <ComponentRef Id="cmp1712C1740627D3DCDE8EF6792E575B19" />
+            <ComponentRef Id="cmpF1EB8847BDDBADA228BC06F80A09F09F" />
+            <ComponentRef Id="cmp4F7BB6998C7F34F456F248A3F07096CB" />
+            <ComponentRef Id="cmp060FA2B7DA62E878B13425C78FA7F719" />
+            <ComponentRef Id="cmp7E796C74E105B96A966707B2D0824013" />
+            <ComponentRef Id="cmp764821E0F38E75C4AA4C887373929979" />
+            <ComponentRef Id="cmp89C9DD8771D7D467B57AF4C217483252" />
+            <ComponentRef Id="cmp6F2AC9EB231998A323F5A68535D38C8C" />
+            <ComponentRef Id="cmp4B88D57AE2306BED98B249DE6CB1A48A" />
+            <ComponentRef Id="cmp0BA90D4FE411C851512AF9EB38B5179E" />
+            <ComponentRef Id="cmp0A869DDA563DE56439516D730AC00685" />
+            <ComponentRef Id="cmpC999FDD015032BD1ED7F4D09C895387E" />
+            <ComponentRef Id="cmpBCB9FBC8202AF0CE0CBC2E7DC96DA8FF" />
+            <ComponentRef Id="cmpE4DE3A7ADD10D1057431D19E3DF34826" />
+            <ComponentRef Id="cmp4D398E2E22A0C6D9D1C6301E77550BB5" />
+            <ComponentRef Id="cmp856E5804C5006AEE9A7F464255FF7B29" />
+            <ComponentRef Id="cmpCC81E18408F15231F7C48183FAA06A88" />
+            <ComponentRef Id="cmp454F366B93E6B1F4C156850863947892" />
+            <ComponentRef Id="cmp717F07F0BCE762260DDB803FCAC99231" />
+            <ComponentRef Id="cmp2E94B27E84D8386AF8E4B6E9AC999AA4" />
+            <ComponentRef Id="cmp7B5D0C77623F2059112873D9A90A4974" />
+            <ComponentRef Id="cmpB7E05150ADAA317DAEB5FE1BF4A994EC" />
+            <ComponentRef Id="cmpC710D8BD2BF3FD480985B81778E5578F" />
+            <ComponentRef Id="cmpA7A7C909D66D13CA0D04F017FB8A4596" />
+            <ComponentRef Id="cmp96EB3C503C9DFD1851BF0B1142487176" />
+            <ComponentRef Id="cmp8FE350B21906BC242AFF0F944AC85274" />
+            <ComponentRef Id="cmpA2F3644D1DB3B9CEB9E69665F6B10874" />
+            <ComponentRef Id="cmpA3CD50DC2A3B30AD53CB768ADA761B3E" />
+            <ComponentRef Id="cmp8768DD6971791219D2BC871B2A3C3332" />
+            <ComponentRef Id="cmpDE08A30CACDCF55E989B2CE9384365D3" />
+            <ComponentRef Id="cmp6A74DFCB81F8CE7C1230F03E8A90515C" />
+            <ComponentRef Id="cmp0777D6C36C32105C71EB48F5BEE969FA" />
+            <ComponentRef Id="cmp0B4F6A89C5C2351B8FFDA522FC6EE990" />
+            <ComponentRef Id="cmp4230EF74582CAB3C40E427593DAB3CBA" />
+            <ComponentRef Id="cmp72A193EC75902809199440865B716FCE" />
+            <ComponentRef Id="cmp4F0486A400EF553F07EE7A4994B0E46F" />
+            <ComponentRef Id="cmp666E7AAE6B18D73AB447F30B51C04DD0" />
+            <ComponentRef Id="cmp2F3FEC8527701BE9FD98890308A8DB8E" />
+            <ComponentRef Id="cmp7B64AB325DC4FF828C7DBD3AF1D19C0B" />
+            <ComponentRef Id="cmp13A54CBA33D57FA120F1C913B8595339" />
+            <ComponentRef Id="cmp84C2CD638E570D1A6BBEF8B1812877F7" />
+            <ComponentRef Id="cmp348EC10733AB8688A7230F7065C3FCC6" />
+            <ComponentRef Id="cmp1167970DC0E50C7421BC2A4BFACF46C2" />
+            <ComponentRef Id="cmp971E2B03B15BDCF189556E2755246615" />
+            <ComponentRef Id="cmpE8647558192DD4B8462024F12B5693E0" />
+            <ComponentRef Id="cmp484AB07486D6B67DD9F90C385E8D21B4" />
+            <ComponentRef Id="cmp82DC3174809FCA3877180C507AA32C38" />
+            <ComponentRef Id="cmp555011D28DB0FF8681B7E8CA6A7F8E22" />
+            <ComponentRef Id="cmp4C91295075F5A7F8D31656E4C3B288F5" />
+            <ComponentRef Id="cmpCD8FBA4C42AB6B01D25C341960C85CF9" />
+            <ComponentRef Id="cmp1D8CCE744471EEA09141311EBE40F6A7" />
+            <ComponentRef Id="cmp847A447D4BC43C3F583DC990E2067AE6" />
+            <ComponentRef Id="cmpE85F78FB8ECDE48ED4F31847A7594D6F" />
+            <ComponentRef Id="cmpAC15E09ABD494511FF3A39F7AC3E2E43" />
+            <ComponentRef Id="cmp4E8D6FA17CB41C713C8810E69F9F7A81" />
+            <ComponentRef Id="cmp6B5225D169EBE5212B31C99274D9B6E0" />
+            <ComponentRef Id="cmpE1DF61A22DDBD41890F8A52EF1807B0E" />
+            <ComponentRef Id="cmpA4F8E8F96F13F827EE6D3344E350A03F" />
+            <ComponentRef Id="cmpFD29954FCEC917EB3E1184BBC13C0CEE" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>

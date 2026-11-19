@@ -1,0 +1,30 @@
+# 构建产物
+dist/
+installer/stage/
+installer/obj/
+installer/.wix-tmp/
+installer/license.rtf
+installer/banner.bmp
+installer/dialog.bmp
+
+# 依赖
+node_modules/
+
+# 打包工具链（39 MB，按需下载）
+tools/
+
+# 运行时数据（用户配置、背景图、WebView2 缓存）
+data/
+userdata/
+*.log
+rapoolite-trace.log
+
+# 本地临时
+tmp/
+.browser-profile/
+*.wixpdb
+*.wixobj
+
+# 系统
+Thumbs.db
+desktop.ini

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  RapooLite 安装包定义（WiX 3.x，per-user 安装）
+  安装位置：%LOCALAPPDATA%\Programs\RapooLite
+  卸载：设置 → 应用，或 msiexec /x {ProductCode}
+-->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*"
+           Name="RapooLite"
+           Language="2052"
+           Version="1.0.0.0"
+           Manufacturer="RapooLite"
+           Codepage="936"
+           UpgradeCode="7C1F3B42-9A5E-4D63-8B27-5E0A2D9C4F18">
+
+    <Package Id="*"
+             InstallerVersion="500"
+             Compressed="yes"
+             InstallScope="perUser"
+             Platform="x64"
+             Description="RapooLite - third party driver for Rapoo VT3"
+             Comments="DPI, polling rate, button mapping, sensor tuning, tray battery, autostart" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of RapooLite is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <Property Id="ARPPRODUCTICON" Value="AppIcon" />
+    <Property Id="ARPHELPLINK" Value="https://github.com/" />
+    <Property Id="ARPNOREPAIR" Value="1" />
+    <Property Id="MSIUSEREALADMINDETECTION" Value="1" />
+
+    <Icon Id="AppIcon" SourceFile="..\host\app.ico" />
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
+    <WixVariable Id="WixUILicenseRtf" Value="license.rtf" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="LocalAppDataFolder">
+        <Directory Id="ProgramsFolder" Name="Programs">
+          <Directory Id="INSTALLDIR" Name="RapooLite" />
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="AppMenuFolder" Name="RapooLite" />
+      </Directory>
+      <Directory Id="DesktopFolder" />
+    </Directory>
+
+    <!-- 开始菜单快捷方式 -->
+    <DirectoryRef Id="AppMenuFolder">
+      <Component Id="StartMenuShortcut" Guid="*">
+        <Shortcut Id="AppShortcut"
+                  Name="RapooLite"
+                  Description="Rapoo VT3 driver"
+                  Target="[INSTALLDIR]RapooLite.exe"
+                  WorkingDirectory="INSTALLDIR"
+                  Icon="AppIcon" />
+        <RemoveFolder Id="RemoveAppMenuFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\RapooLite" Name="Shortcut" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <!-- 卸载时清理：开机自启项、程序目录、日志、早期版本遗留的开始菜单快捷方式 -->
+    <DirectoryRef Id="INSTALLDIR">
+      <Component Id="CleanupOnUninstall" Guid="*">
+        <RegistryValue Root="HKCU" Key="Software\RapooLite" Name="Installed" Type="integer" Value="1" KeyPath="yes" />
+        <RemoveRegistryValue Root="HKCU"
+                             Key="Software\Microsoft\Windows\CurrentVersion\Run"
+                             Name="RapooLite" />
+        <RemoveFile Id="RemoveLogs" Directory="INSTALLDIR" Name="*.log" On="uninstall" />
+        <RemoveFolder Id="RemoveInstallDir" On="uninstall" Directory="INSTALLDIR" />
+        <RemoveFolder Id="RemoveProgramsFolder" On="uninstall" Directory="ProgramsFolder" />
+      </Component>
+    </DirectoryRef>
+
+    <!-- 旧版 install.ps1 曾把快捷方式直接建在「开始菜单\程序」根下，这里一并清掉 -->
+    <DirectoryRef Id="ProgramMenuFolder">
+      <Component Id="CleanupLegacyShortcut" Guid="*">
+        <RegistryValue Root="HKCU" Key="Software\RapooLite" Name="LegacyShortcut" Type="integer" Value="1" KeyPath="yes" />
+        <RemoveFile Id="RemoveLegacyLnk" Name="RapooLite.lnk" On="uninstall" />
+      </Component>
+    </DirectoryRef>
+
+    <!-- 深度清理：app\ 与 userdata\ 里的运行时残留（保留 data\ 用户预设） -->
+    <CustomAction Id="PurgeRuntimeFolders"
+                  Directory="INSTALLDIR"
+                  Execute="deferred"
+                  Impersonate="yes"
+                  Return="ignore"
+                  ExeCommand="cmd.exe /c rmdir /s /q &quot;[INSTALLDIR]app&quot; &amp; rmdir /s /q &quot;[INSTALLDIR]userdata&quot;" />
+
+    <InstallExecuteSequence>
+      <Custom Action="PurgeRuntimeFolders" After="RemoveFiles">REMOVE=&quot;ALL&quot;</Custom>
+    </InstallExecuteSequence>
+
+    <Feature Id="MainFeature" Title="RapooLite" Level="1" Absent="disallow">
+      <ComponentGroupRef Id="AppFiles" />
+      <ComponentRef Id="StartMenuShortcut" />
+      <ComponentRef Id="CleanupOnUninstall" />
+      <ComponentRef Id="CleanupLegacyShortcut" />
+    </Feature>
+
+    <UIRef Id="WixUI_Minimal" />
+    <WixVariable Id="WixUIBannerBmp" Value="banner.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="dialog.bmp" />
+  </Product>
+</Wix>
